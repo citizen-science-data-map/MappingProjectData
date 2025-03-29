@@ -1,0 +1,225 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.097558,
+                    -44.683381
+                ]
+            },
+            "properties": {
+                "site_name": "Waterfall Creek",
+                "most_recent_depth": 11.25,
+                "historical_data": [
+                    {
+                        "date": "2025-02-15",
+                        "depth": 11.25
+                    },
+                    {
+                        "date": "2025-01-07",
+                        "depth": 8.25
+                    },
+                    {
+                        "date": "2024-12-06",
+                        "depth": 9.0
+                    },
+                    {
+                        "date": "2024-07-22",
+                        "depth": 11.75
+                    },
+                    {
+                        "date": "2024-06-24",
+                        "depth": 14.25
+                    },
+                    {
+                        "date": "2024-05-28",
+                        "depth": 11.5
+                    },
+                    {
+                        "date": "2024-04-06",
+                        "depth": 14.25
+                    },
+                    {
+                        "date": "2024-02-21",
+                        "depth": 8.25
+                    },
+                    {
+                        "date": "2023-11-21",
+                        "depth": 14.33
+                    },
+                    {
+                        "date": "2023-12-19",
+                        "depth": 11.25
+                    },
+                    {
+                        "date": "2023-08-21",
+                        "depth": 14.0
+                    },
+                    {
+                        "date": "2023-07-11",
+                        "depth": 11.0
+                    },
+                    {
+                        "date": "2023-07-11",
+                        "depth": 13.0
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.121474,
+                    -44.676138
+                ]
+            },
+            "properties": {
+                "site_name": NaN,
+                "most_recent_depth": 9.5,
+                "historical_data": [
+                    {
+                        "date": "2024-04-29",
+                        "depth": 9.5
+                    },
+                    {
+                        "date": "2024-04-23",
+                        "depth": 9.75
+                    },
+                    {
+                        "date": "2024-03-29",
+                        "depth": 9.35
+                    },
+                    {
+                        "date": "2024-02-27",
+                        "depth": 9.0
+                    },
+                    {
+                        "date": "2024-02-27",
+                        "depth": 9.5
+                    },
+                    {
+                        "date": "2024-02-27",
+                        "depth": 9.25
+                    },
+                    {
+                        "date": "2024-02-27",
+                        "depth": 10.25
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.140916,
+                    -44.658156
+                ]
+            },
+            "properties": {
+                "site_name": NaN,
+                "most_recent_depth": 9.75,
+                "historical_data": [
+                    {
+                        "date": "2024-04-29",
+                        "depth": 9.5
+                    },
+                    {
+                        "date": "2024-04-23",
+                        "depth": 9.75
+                    },
+                    {
+                        "date": "2024-03-29",
+                        "depth": 9.35
+                    },
+                    {
+                        "date": "2024-02-27",
+                        "depth": 9.0
+                    },
+                    {
+                        "date": "2024-02-27",
+                        "depth": 9.5
+                    },
+                    {
+                        "date": "2024-02-27",
+                        "depth": 9.25
+                    },
+                    {
+                        "date": "2024-02-27",
+                        "depth": 10.25
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.145429,
+                    -44.647394
+                ]
+            },
+            "properties": {
+                "site_name": NaN,
+                "most_recent_depth": 10.25,
+                "historical_data": [
+                    {
+                        "date": "2024-04-29",
+                        "depth": 9.5
+                    },
+                    {
+                        "date": "2024-04-23",
+                        "depth": 9.75
+                    },
+                    {
+                        "date": "2024-03-29",
+                        "depth": 9.35
+                    },
+                    {
+                        "date": "2024-02-27",
+                        "depth": 9.0
+                    },
+                    {
+                        "date": "2024-02-27",
+                        "depth": 9.5
+                    },
+                    {
+                        "date": "2024-02-27",
+                        "depth": 9.25
+                    },
+                    {
+                        "date": "2024-02-27",
+                        "depth": 10.25
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.133958,
+                    -44.603602
+                ]
+            },
+            "properties": {
+                "site_name": "Stevenson's Island",
+                "most_recent_depth": 9.4,
+                "historical_data": [
+                    {
+                        "date": "2024-03-01",
+                        "depth": 9.4
+                    }
+                ]
+            }
+        }
+    ]
+}
