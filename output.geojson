@@ -79,36 +79,12 @@
                 ]
             },
             "properties": {
-                "site_name": NaN,
+                "site_name": "Unnamed 1",
                 "most_recent_depth": 9.5,
                 "historical_data": [
                     {
                         "date": "2024-04-29",
                         "depth": 9.5
-                    },
-                    {
-                        "date": "2024-04-23",
-                        "depth": 9.75
-                    },
-                    {
-                        "date": "2024-03-29",
-                        "depth": 9.35
-                    },
-                    {
-                        "date": "2024-02-27",
-                        "depth": 9.0
-                    },
-                    {
-                        "date": "2024-02-27",
-                        "depth": 9.5
-                    },
-                    {
-                        "date": "2024-02-27",
-                        "depth": 9.25
-                    },
-                    {
-                        "date": "2024-02-27",
-                        "depth": 10.25
                     }
                 ]
             }
@@ -123,13 +99,9 @@
                 ]
             },
             "properties": {
-                "site_name": NaN,
+                "site_name": "Unnamed 2",
                 "most_recent_depth": 9.75,
                 "historical_data": [
-                    {
-                        "date": "2024-04-29",
-                        "depth": 9.5
-                    },
                     {
                         "date": "2024-04-23",
                         "depth": 9.75
@@ -149,10 +121,6 @@
                     {
                         "date": "2024-02-27",
                         "depth": 9.25
-                    },
-                    {
-                        "date": "2024-02-27",
-                        "depth": 10.25
                     }
                 ]
             }
@@ -167,33 +135,9 @@
                 ]
             },
             "properties": {
-                "site_name": NaN,
+                "site_name": "Unnamed 3",
                 "most_recent_depth": 10.25,
                 "historical_data": [
-                    {
-                        "date": "2024-04-29",
-                        "depth": 9.5
-                    },
-                    {
-                        "date": "2024-04-23",
-                        "depth": 9.75
-                    },
-                    {
-                        "date": "2024-03-29",
-                        "depth": 9.35
-                    },
-                    {
-                        "date": "2024-02-27",
-                        "depth": 9.0
-                    },
-                    {
-                        "date": "2024-02-27",
-                        "depth": 9.5
-                    },
-                    {
-                        "date": "2024-02-27",
-                        "depth": 9.25
-                    },
                     {
                         "date": "2024-02-27",
                         "depth": 10.25
