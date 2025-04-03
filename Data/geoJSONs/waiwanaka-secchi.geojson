@@ -48,12 +48,12 @@
                         "value": 9.75
                     },
                     {
-                        "date": "2023-11-21",
-                        "value": 14.25
-                    },
-                    {
                         "date": "2023-12-19",
                         "value": 9.35
+                    },
+                    {
+                        "date": "2023-11-21",
+                        "value": 14.25
                     },
                     {
                         "date": "2023-08-21",
@@ -139,29 +139,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    169.145429,
-                    -44.647394
-                ]
-            },
-            "properties": {
-                "site_name": "Unnamed 3",
-                "most_recent_value": 11.0,
-                "date_recorded": "2024-02-27",
-                "historical_data": [
-                    {
-                        "date": "2024-02-27",
-                        "value": 11.0
-                    }
-                ],
-                "colour": "#3498db",
-                "id": 13
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     169.133958,
                     -44.603602
                 ]
@@ -178,6 +155,29 @@
                 ],
                 "colour": "#3498db",
                 "id": 11
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.145429,
+                    -44.647394
+                ]
+            },
+            "properties": {
+                "site_name": "Unnamed 3",
+                "most_recent_value": 11.0,
+                "date_recorded": "2024-02-27",
+                "historical_data": [
+                    {
+                        "date": "2024-02-27",
+                        "value": 11.0
+                    }
+                ],
+                "colour": "#3498db",
+                "id": 13
             }
         }
     ]
