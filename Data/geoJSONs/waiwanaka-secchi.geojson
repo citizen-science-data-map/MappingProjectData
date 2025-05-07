@@ -1,4 +1,251 @@
 {
     "type": "FeatureCollection",
-    "features": []
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.097558,
+                    -44.683381
+                ]
+            },
+            "properties": {
+                "id": "secchi-point-1",
+                "site_name": "Waterfall Creek",
+                "colour": "#000000",
+                "count": 9,
+                "urls": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "data_points": [
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 11.25,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 8.25,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 9.0,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 11.75,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 14.25,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 11.5,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 14.25,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 8.25,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 14.33,
+                        "count": NaN
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.09756,
+                    -44.68338
+                ]
+            },
+            "properties": {
+                "id": "secchi-point-10",
+                "site_name": "Waterfall Creek",
+                "colour": "#000000",
+                "count": 4,
+                "urls": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "data_points": [
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 11.25,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 14.0,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 11.0,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 13.0,
+                        "count": NaN
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.121474,
+                    -44.676138
+                ]
+            },
+            "properties": {
+                "id": "secchi-point-14",
+                "site_name": "Unnamed 1",
+                "colour": "#000000",
+                "count": 1,
+                "urls": [
+                    ""
+                ],
+                "data_points": [
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 9.5,
+                        "count": NaN
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.140916,
+                    -44.658156
+                ]
+            },
+            "properties": {
+                "id": "secchi-point-15",
+                "site_name": "Unnamed 2",
+                "colour": "#000000",
+                "count": 5,
+                "urls": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "data_points": [
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 9.75,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 9.35,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 9.0,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 9.5,
+                        "count": NaN
+                    },
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 9.25,
+                        "count": NaN
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.145429,
+                    -44.647394
+                ]
+            },
+            "properties": {
+                "id": "secchi-point-20",
+                "site_name": "Unnamed 3",
+                "colour": "#000000",
+                "count": 1,
+                "urls": [
+                    ""
+                ],
+                "data_points": [
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 10.25,
+                        "count": NaN
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.133958,
+                    -44.603602
+                ]
+            },
+            "properties": {
+                "id": "secchi-point-21",
+                "site_name": "Stevenson's Island",
+                "colour": "#000000",
+                "count": 1,
+                "urls": [
+                    ""
+                ],
+                "data_points": [
+                    {
+                        "url": "",
+                        "Secchi Depth (m)": 9.4,
+                        "count": NaN
+                    }
+                ]
+            }
+        }
+    ]
 }
