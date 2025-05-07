@@ -8,36 +8,52 @@
                 "coordinates": [
                     [
                         [
-                            169.1251026434333,
-                            -44.679305937296085
+                            169.12510257513568,
+                            -44.67930546982493
                         ],
                         [
-                            169.12525543385806,
-                            -44.67944902967265
+                            169.12525542486432,
+                            -44.67944853017507
                         ],
                         [
-                            169.12443187508524,
-                            -44.68007431235894
+                            169.12443142569003,
+                            -44.68007453017507
                         ],
                         [
-                            169.12427908301163,
-                            -44.67993121998238
+                            169.12427857430998,
+                            -44.67993146982493
                         ],
                         [
-                            169.1251026434333,
-                            -44.679305937296085
+                            169.12510257513568,
+                            -44.67930546982493
                         ]
                     ]
                 ]
             },
             "properties": {
-                "id": "survey-1",
+                "id": "survey-polygon-1",
                 "url": "https://litterintelligence.org/data/survey?id=3492",
                 "colour": "#000000",
                 "centroid_coordinates": [
-                    -44.679690125066095,
-                    169.12476725850138
+                    -44.679690000239326,
+                    169.12476699965353
                 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.12476699965353,
+                    -44.679690000239326
+                ]
+            },
+            "properties": {
+                "id": "survey-centroid-1",
+                "url": "https://litterintelligence.org/data/survey?id=3492",
+                "colour": "#000000",
+                "is_centroid": true
             }
         },
         {
@@ -47,35 +63,35 @@
                 "coordinates": [
                     [
                         [
-                            169.0981566824408,
-                            -44.68705792539743
+                            169.0981570053695,
+                            -44.68705841066559
                         ],
                         [
-                            169.0983487365279,
-                            -44.68694115794003
+                            169.0983489946305,
+                            -44.6869415893344
                         ],
                         [
-                            169.09891881301934,
-                            -44.68760777835739
+                            169.09891899573424,
+                            -44.687607589334405
                         ],
                         [
-                            169.098726756722,
-                            -44.68772454581479
+                            169.09872700426578,
+                            -44.687724410665595
                         ],
                         [
-                            169.0981566824408,
-                            -44.68705792539743
+                            169.0981570053695,
+                            -44.68705841066559
                         ]
                     ]
                 ]
             },
             "properties": {
-                "id": "survey-2",
+                "id": "survey-polygon-2",
                 "url": "https://litterintelligence.org/data/survey?id=3471",
                 "colour": "#000000",
                 "centroid_coordinates": [
-                    -44.687332852285124,
-                    169.09853774755842
+                    -44.687333000406696,
+                    169.09853800038036
                 ]
             }
         },
@@ -84,37 +100,15 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    169.13530155065482,
-                    -44.69484742021263
+                    169.09853800038036,
+                    -44.687333000406696
                 ]
             },
             "properties": {
-                "id": "survey-3",
-                "url": "https://litterintelligence.org/data/survey?id=3401",
+                "id": "survey-centroid-2",
+                "url": "https://litterintelligence.org/data/survey?id=3471",
                 "colour": "#000000",
-                "centroid_coordinates": [
-                    169.13530155065482,
-                    -44.69484742021263
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    169.13755136538256,
-                    -44.69610407388723
-                ]
-            },
-            "properties": {
-                "id": "survey-4",
-                "url": "https://litterintelligence.org/data/survey?id=3402",
-                "colour": "#000000",
-                "centroid_coordinates": [
-                    169.13755136538256,
-                    -44.69610407388723
-                ]
+                "is_centroid": true
             }
         },
         {
@@ -124,36 +118,52 @@
                 "coordinates": [
                     [
                         [
-                            169.15128278276785,
-                            -44.664200827886596
+                            169.151282804897,
+                            -44.66420117864408
                         ],
                         [
-                            169.15131318259444,
-                            -44.66402247142782
+                            169.151313195103,
+                            -44.66402282135593
                         ],
                         [
-                            169.15255890915287,
-                            -44.664173486779724
+                            169.15255919514257,
+                            -44.664173821355924
                         ],
                         [
-                            169.1525285092471,
-                            -44.6643518432385
+                            169.15252880485744,
+                            -44.66435217864407
                         ],
                         [
-                            169.15128278276785,
-                            -44.664200827886596
+                            169.151282804897,
+                            -44.66420117864408
                         ]
                     ]
                 ]
             },
             "properties": {
-                "id": "survey-5",
+                "id": "survey-polygon-5",
                 "url": "https://litterintelligence.org/data/survey?id=3388",
                 "colour": "#000000",
                 "centroid_coordinates": [
-                    -44.6641871573329,
-                    169.1519208459462
+                    -44.664187499999734,
+                    169.15192100000561
                 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.15192100000561,
+                    -44.664187499999734
+                ]
+            },
+            "properties": {
+                "id": "survey-centroid-5",
+                "url": "https://litterintelligence.org/data/survey?id=3388",
+                "colour": "#000000",
+                "is_centroid": true
             }
         },
         {
@@ -163,35 +173,35 @@
                 "coordinates": [
                     [
                         [
-                            169.15882824314917,
-                            -44.71632043378254
+                            169.15882865194837,
+                            -44.716320514195175
                         ],
                         [
-                            169.1586830416449,
-                            -44.71617335432235
+                            169.15868334805165,
+                            -44.71617348580483
                         ],
                         [
-                            169.15961053361258,
-                            -44.71552269439537
+                            169.159610348869,
+                            -44.715522485804826
                         ],
                         [
-                            169.15975573348425,
-                            -44.71566977385556
+                            169.159755651131,
+                            -44.71566951419517
                         ],
                         [
-                            169.15882824314917,
-                            -44.71632043378254
+                            169.15882865194837,
+                            -44.716320514195175
                         ]
                     ]
                 ]
             },
             "properties": {
-                "id": "survey-6",
+                "id": "survey-polygon-6",
                 "url": "https://litterintelligence.org/data/survey?id=3387",
                 "colour": "#000000",
                 "centroid_coordinates": [
-                    -44.715921564325654,
-                    169.15921938760454
+                    -44.715921500237286,
+                    169.15921949963135
                 ]
             }
         },
@@ -200,37 +210,15 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    169.13530155065482,
-                    -44.69484742021263
+                    169.15921949963135,
+                    -44.715921500237286
                 ]
             },
             "properties": {
-                "id": "survey-7",
-                "url": "https://litterintelligence.org/data/survey?id=3379",
+                "id": "survey-centroid-6",
+                "url": "https://litterintelligence.org/data/survey?id=3387",
                 "colour": "#000000",
-                "centroid_coordinates": [
-                    169.13530155065482,
-                    -44.69484742021263
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    169.13748902177988,
-                    -44.69613902642869
-                ]
-            },
-            "properties": {
-                "id": "survey-8",
-                "url": "https://litterintelligence.org/data/survey?id=3380",
-                "colour": "#000000",
-                "centroid_coordinates": [
-                    169.13748902177988,
-                    -44.69613902642869
-                ]
+                "is_centroid": true
             }
         },
         {
@@ -240,36 +228,52 @@
                 "coordinates": [
                     [
                         [
-                            169.26293941591422,
-                            -44.609177552005384
+                            169.2629395136914,
+                            -44.609177800129174
                         ],
                         [
-                            169.26286840466156,
-                            -44.60934995511463
+                            169.26286848630858,
+                            -44.60935019987083
                         ],
                         [
-                            169.26200212462336,
-                            -44.60909593559554
+                            169.2620024864639,
+                            -44.60909619987083
                         ],
                         [
-                            169.26207313556543,
-                            -44.608923532486294
+                            169.26207351353608,
+                            -44.60892380012917
                         ],
                         [
-                            169.26293941591422,
-                            -44.609177552005384
+                            169.2629395136914,
+                            -44.609177800129174
                         ]
                     ]
                 ]
             },
             "properties": {
-                "id": "survey-9",
+                "id": "survey-polygon-9",
                 "url": "https://litterintelligence.org/data/survey?id=3329",
                 "colour": "#000000",
                 "centroid_coordinates": [
-                    -44.60913674380585,
-                    169.26247077022705
+                    -44.60913700000538,
+                    169.26247100003593
                 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.26247100003593,
+                    -44.60913700000538
+                ]
+            },
+            "properties": {
+                "id": "survey-centroid-9",
+                "url": "https://litterintelligence.org/data/survey?id=3329",
+                "colour": "#000000",
+                "is_centroid": true
             }
         },
         {
@@ -279,36 +283,52 @@
                 "coordinates": [
                     [
                         [
-                            169.11938647978616,
-                            -44.699246969783765
+                            169.11938679158612,
+                            -44.699247367868225
                         ],
                         [
-                            169.11933088393198,
-                            -44.69942223201493
+                            169.11933120841388,
+                            -44.69942263213177
                         ],
                         [
-                            169.1179781343897,
-                            -44.69911721532595
+                            169.11797820856026,
+                            -44.699117632131774
                         ],
                         [
-                            169.118033729951,
-                            -44.69894195309478
+                            169.11803379143976,
+                            -44.69894236786823
                         ],
                         [
-                            169.11938647978616,
-                            -44.699246969783765
+                            169.11938679158612,
+                            -44.699247367868225
                         ]
                     ]
                 ]
             },
             "properties": {
-                "id": "survey-10",
+                "id": "survey-polygon-10",
                 "url": "https://litterintelligence.org/data/survey?id=3318",
                 "colour": "#000000",
                 "centroid_coordinates": [
-                    -44.69918209256084,
-                    169.1186823070553
+                    -44.69918250000598,
+                    169.11868250004056
                 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.11868250004056,
+                    -44.69918250000598
+                ]
+            },
+            "properties": {
+                "id": "survey-centroid-10",
+                "url": "https://litterintelligence.org/data/survey?id=3318",
+                "colour": "#000000",
+                "is_centroid": true
             }
         },
         {
@@ -318,35 +338,35 @@
                 "coordinates": [
                     [
                         [
-                            169.13495118942745,
-                            -44.69320497806408
+                            169.13495089534896,
+                            -44.693204543756906
                         ],
                         [
-                            169.13517535494645,
-                            -44.693287950357536
+                            169.13517510465104,
+                            -44.6932874562431
                         ],
                         [
-                            169.13454411385402,
-                            -44.69450030684919
+                            169.1345441069992,
+                            -44.6945004562431
                         ],
                         [
-                            169.13431994364214,
-                            -44.69441733455574
+                            169.13431989300082,
+                            -44.694417543756906
                         ],
                         [
-                            169.13495118942745,
-                            -44.69320497806408
+                            169.13495089534896,
+                            -44.693204543756906
                         ]
                     ]
                 ]
             },
             "properties": {
-                "id": "survey-11",
+                "id": "survey-polygon-11",
                 "url": "https://litterintelligence.org/data/survey?id=3295",
                 "colour": "#000000",
                 "centroid_coordinates": [
-                    -44.69385264422161,
-                    169.13474764952176
+                    -44.693852501767395,
+                    169.13474749905387
                 ]
             }
         },
@@ -355,18 +375,15 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    169.14259528892475,
-                    -44.69076042851949
+                    169.13474749905387,
+                    -44.693852501767395
                 ]
             },
             "properties": {
-                "id": "survey-12",
-                "url": "https://litterintelligence.org/data/survey?id=3293",
+                "id": "survey-centroid-11",
+                "url": "https://litterintelligence.org/data/survey?id=3295",
                 "colour": "#000000",
-                "centroid_coordinates": [
-                    169.14259528892475,
-                    -44.69076042851949
-                ]
+                "is_centroid": true
             }
         },
         {
@@ -376,36 +393,52 @@
                 "coordinates": [
                     [
                         [
-                            169.1251026434333,
-                            -44.679305937296085
+                            169.12510257513568,
+                            -44.67930546982493
                         ],
                         [
-                            169.12525543385806,
-                            -44.67944902967265
+                            169.12525542486432,
+                            -44.67944853017507
                         ],
                         [
-                            169.12443187508524,
-                            -44.68007431235894
+                            169.12443142569003,
+                            -44.68007453017507
                         ],
                         [
-                            169.12427908301163,
-                            -44.67993121998238
+                            169.12427857430998,
+                            -44.67993146982493
                         ],
                         [
-                            169.1251026434333,
-                            -44.679305937296085
+                            169.12510257513568,
+                            -44.67930546982493
                         ]
                     ]
                 ]
             },
             "properties": {
-                "id": "survey-13",
+                "id": "survey-polygon-13",
                 "url": "https://litterintelligence.org/data/survey?id=3263",
                 "colour": "#000000",
                 "centroid_coordinates": [
-                    -44.679690125066095,
-                    169.12476725850138
+                    -44.679690000239326,
+                    169.12476699965353
                 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.12476699965353,
+                    -44.679690000239326
+                ]
+            },
+            "properties": {
+                "id": "survey-centroid-13",
+                "url": "https://litterintelligence.org/data/survey?id=3263",
+                "colour": "#000000",
+                "is_centroid": true
             }
         },
         {
@@ -415,35 +448,35 @@
                 "coordinates": [
                     [
                         [
-                            169.13769278803363,
-                            -44.69609989274501
+                            169.13769237188194,
+                            -44.6961
                         ],
                         [
-                            169.1374400442702,
-                            -44.69609989274501
+                            169.13743962811805,
+                            -44.6961
                         ],
                         [
-                            169.1374400442702,
-                            -44.69609989274501
+                            169.13743962811805,
+                            -44.6961
                         ],
                         [
-                            169.13769278803363,
-                            -44.69609989274501
+                            169.13769237188194,
+                            -44.6961
                         ],
                         [
-                            169.13769278803363,
-                            -44.69609989274501
+                            169.13769237188194,
+                            -44.6961
                         ]
                     ]
                 ]
             },
             "properties": {
-                "id": "survey-14",
+                "id": "survey-polygon-14",
                 "url": "https://litterintelligence.org/data/survey?id=3226",
                 "colour": "#000000",
                 "centroid_coordinates": [
-                    -44.69609989274501,
-                    169.1375664161519
+                    -44.6961,
+                    169.137566
                 ]
             }
         },
@@ -452,18 +485,15 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    169.13530155065482,
-                    -44.69484742021263
+                    169.137566,
+                    -44.6961
                 ]
             },
             "properties": {
-                "id": "survey-15",
-                "url": "https://litterintelligence.org/data/survey?id=3219",
+                "id": "survey-centroid-14",
+                "url": "https://litterintelligence.org/data/survey?id=3226",
                 "colour": "#000000",
-                "centroid_coordinates": [
-                    169.13530155065482,
-                    -44.69484742021263
-                ]
+                "is_centroid": true
             }
         },
         {
@@ -473,36 +503,52 @@
                 "coordinates": [
                     [
                         [
-                            169.0981566824408,
-                            -44.68705792539743
+                            169.0981570053695,
+                            -44.68705841066559
                         ],
                         [
-                            169.0983487365279,
-                            -44.68694115794003
+                            169.0983489946305,
+                            -44.6869415893344
                         ],
                         [
-                            169.09891881301934,
-                            -44.68760777835739
+                            169.09891899573424,
+                            -44.687607589334405
                         ],
                         [
-                            169.098726756722,
-                            -44.68772454581479
+                            169.09872700426578,
+                            -44.687724410665595
                         ],
                         [
-                            169.0981566824408,
-                            -44.68705792539743
+                            169.0981570053695,
+                            -44.68705841066559
                         ]
                     ]
                 ]
             },
             "properties": {
-                "id": "survey-16",
+                "id": "survey-polygon-16",
                 "url": "https://litterintelligence.org/data/survey?id=3208",
                 "colour": "#000000",
                 "centroid_coordinates": [
-                    -44.687332852285124,
-                    169.09853774755842
+                    -44.687333000406696,
+                    169.09853800038036
                 ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.09853800038036,
+                    -44.687333000406696
+                ]
+            },
+            "properties": {
+                "id": "survey-centroid-16",
+                "url": "https://litterintelligence.org/data/survey?id=3208",
+                "colour": "#000000",
+                "is_centroid": true
             }
         },
         {
@@ -512,35 +558,35 @@
                 "coordinates": [
                     [
                         [
-                            169.15128278276785,
-                            -44.664200827886596
+                            169.151282804897,
+                            -44.66420117864408
                         ],
                         [
-                            169.15131318259444,
-                            -44.66402247142782
+                            169.151313195103,
+                            -44.66402282135593
                         ],
                         [
-                            169.15255890915287,
-                            -44.664173486779724
+                            169.15255919514257,
+                            -44.664173821355924
                         ],
                         [
-                            169.1525285092471,
-                            -44.6643518432385
+                            169.15252880485744,
+                            -44.66435217864407
                         ],
                         [
-                            169.15128278276785,
-                            -44.664200827886596
+                            169.151282804897,
+                            -44.66420117864408
                         ]
                     ]
                 ]
             },
             "properties": {
-                "id": "survey-17",
+                "id": "survey-polygon-17",
                 "url": "https://litterintelligence.org/data/survey?id=3156",
                 "colour": "#000000",
                 "centroid_coordinates": [
-                    -44.6641871573329,
-                    169.1519208459462
+                    -44.664187499999734,
+                    169.15192100000561
                 ]
             }
         },
@@ -549,17 +595,37 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    169.13748902177988,
-                    -44.69613902642869
+                    169.15192100000561,
+                    -44.664187499999734
                 ]
             },
             "properties": {
-                "id": "survey-18",
-                "url": "https://litterintelligence.org/data/survey?id=3184",
+                "id": "survey-centroid-17",
+                "url": "https://litterintelligence.org/data/survey?id=3156",
                 "colour": "#000000",
-                "centroid_coordinates": [
-                    169.13748902177988,
-                    -44.69613902642869
+                "is_centroid": true
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.135302,
+                    -44.694847
+                ]
+            },
+            "properties": {
+                "id": "survey-point-3",
+                "url": "https://litterintelligence.org/data/survey?id=3401",
+                "colour": "#000000",
+                "count": 5,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3401",
+                    "https://litterintelligence.org/data/survey?id=3379",
+                    "https://litterintelligence.org/data/survey?id=3219",
+                    "https://litterintelligence.org/data/survey?id=3186",
+                    "https://litterintelligence.org/data/survey?id=3020"
                 ]
             }
         },
@@ -568,17 +634,17 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    169.13530155065482,
-                    -44.69484742021263
+                    169.137551,
+                    -44.696104
                 ]
             },
             "properties": {
-                "id": "survey-19",
-                "url": "https://litterintelligence.org/data/survey?id=3186",
+                "id": "survey-point-4",
+                "url": "https://litterintelligence.org/data/survey?id=3402",
                 "colour": "#000000",
-                "centroid_coordinates": [
-                    169.13530155065482,
-                    -44.69484742021263
+                "count": 1,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3402"
                 ]
             }
         },
@@ -587,17 +653,37 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    169.13530155065482,
-                    -44.69484742021263
+                    169.137489,
+                    -44.696139
                 ]
             },
             "properties": {
-                "id": "survey-20",
-                "url": "https://litterintelligence.org/data/survey?id=3020",
+                "id": "survey-point-8",
+                "url": "https://litterintelligence.org/data/survey?id=3380",
                 "colour": "#000000",
-                "centroid_coordinates": [
-                    169.13530155065482,
-                    -44.69484742021263
+                "count": 2,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3380",
+                    "https://litterintelligence.org/data/survey?id=3184"
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.142595,
+                    -44.69076
+                ]
+            },
+            "properties": {
+                "id": "survey-point-12",
+                "url": "https://litterintelligence.org/data/survey?id=3293",
+                "colour": "#000000",
+                "count": 1,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3293"
                 ]
             }
         },
@@ -611,12 +697,12 @@
                 ]
             },
             "properties": {
-                "id": "survey-21",
+                "id": "survey-point-21",
                 "url": "https://litterintelligence.org/data/survey?id=3027",
                 "colour": "#000000",
-                "centroid_coordinates": [
-                    169.18848,
-                    -44.683289
+                "count": 1,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3027"
                 ]
             }
         },
@@ -625,17 +711,17 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    169.13523335956887,
-                    -44.69484459705617
+                    169.135233,
+                    -44.694845
                 ]
             },
             "properties": {
-                "id": "survey-22",
+                "id": "survey-point-22",
                 "url": "https://litterintelligence.org/data/survey?id=2884",
                 "colour": "#000000",
-                "centroid_coordinates": [
-                    169.13523335956887,
-                    -44.69484459705617
+                "count": 1,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=2884"
                 ]
             }
         }
