@@ -29,48 +29,39 @@
                 "data_points": [
                     {
                         "url": "",
-                        "Secchi Depth (m)": 11.25,
-                        "count": NaN
+                        "Secchi Depth (m)": 11.25
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 8.25,
-                        "count": NaN
+                        "Secchi Depth (m)": 8.25
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.0,
-                        "count": NaN
+                        "Secchi Depth (m)": 9.0
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 11.75,
-                        "count": NaN
+                        "Secchi Depth (m)": 11.75
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 14.25,
-                        "count": NaN
+                        "Secchi Depth (m)": 14.25
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 11.5,
-                        "count": NaN
+                        "Secchi Depth (m)": 11.5
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 14.25,
-                        "count": NaN
+                        "Secchi Depth (m)": 14.25
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 8.25,
-                        "count": NaN
+                        "Secchi Depth (m)": 8.25
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 14.33,
-                        "count": NaN
+                        "Secchi Depth (m)": 14.33
                     }
                 ]
             }
@@ -98,23 +89,19 @@
                 "data_points": [
                     {
                         "url": "",
-                        "Secchi Depth (m)": 11.25,
-                        "count": NaN
+                        "Secchi Depth (m)": 11.25
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 14.0,
-                        "count": NaN
+                        "Secchi Depth (m)": 14.0
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 11.0,
-                        "count": NaN
+                        "Secchi Depth (m)": 11.0
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 13.0,
-                        "count": NaN
+                        "Secchi Depth (m)": 13.0
                     }
                 ]
             }
@@ -139,8 +126,7 @@
                 "data_points": [
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.5,
-                        "count": NaN
+                        "Secchi Depth (m)": 9.5
                     }
                 ]
             }
@@ -169,28 +155,23 @@
                 "data_points": [
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.75,
-                        "count": NaN
+                        "Secchi Depth (m)": 9.75
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.35,
-                        "count": NaN
+                        "Secchi Depth (m)": 9.35
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.0,
-                        "count": NaN
+                        "Secchi Depth (m)": 9.0
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.5,
-                        "count": NaN
+                        "Secchi Depth (m)": 9.5
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.25,
-                        "count": NaN
+                        "Secchi Depth (m)": 9.25
                     }
                 ]
             }
@@ -215,8 +196,7 @@
                 "data_points": [
                     {
                         "url": "",
-                        "Secchi Depth (m)": 10.25,
-                        "count": NaN
+                        "Secchi Depth (m)": 10.25
                     }
                 ]
             }
@@ -241,8 +221,7 @@
                 "data_points": [
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.4,
-                        "count": NaN
+                        "Secchi Depth (m)": 9.4
                     }
                 ]
             }
