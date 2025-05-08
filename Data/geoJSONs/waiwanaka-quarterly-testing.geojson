@@ -26,7 +26,8 @@
                         "Turbidity NTU": 0.1,
                         "pH pH Units": 7.8,
                         "Electrical Conductivity (EC) mS/m": 14.0,
-                        "Nitrate-N + Nitrite-N (g/m3)": 0.82
+                        "Nitrate-N + Nitrite-N (g/m3)": 0.82,
+                        "date_recorded": "2025-02-17T12:52:00"
                     },
                     {
                         "url": "",
@@ -34,9 +35,11 @@
                         "Turbidity NTU": 0.16,
                         "pH pH Units": 7.8,
                         "Electrical Conductivity (EC) mS/m": 34.5,
-                        "Nitrate-N + Nitrite-N (g/m3)": 0.82
+                        "Nitrate-N + Nitrite-N (g/m3)": 0.82,
+                        "date_recorded": "2024-11-19T10:45:00"
                     }
-                ]
+                ],
+                "date_recorded": "2025-02-17T12:52:00"
             }
         },
         {
@@ -63,9 +66,11 @@
                         "Turbidity NTU": 0.45,
                         "pH pH Units": 8.0,
                         "Electrical Conductivity (EC) mS/m": 31.0,
-                        "Nitrate-N + Nitrite-N (g/m3)": 1.98
+                        "Nitrate-N + Nitrite-N (g/m3)": 1.98,
+                        "date_recorded": "2025-02-17T12:42:00"
                     }
-                ]
+                ],
+                "date_recorded": "2025-02-17T12:42:00"
             }
         },
         {
@@ -93,7 +98,8 @@
                         "Turbidity NTU": 1.91,
                         "pH pH Units": 8.0,
                         "Electrical Conductivity (EC) mS/m": 14.1,
-                        "Nitrate-N + Nitrite-N (g/m3)": 2.5
+                        "Nitrate-N + Nitrite-N (g/m3)": 2.5,
+                        "date_recorded": "2025-02-17T12:36:00"
                     },
                     {
                         "url": "",
@@ -101,9 +107,11 @@
                         "Turbidity NTU": 1.16,
                         "pH pH Units": 8.0,
                         "Electrical Conductivity (EC) mS/m": 13.8,
-                        "Nitrate-N + Nitrite-N (g/m3)": 0.22
+                        "Nitrate-N + Nitrite-N (g/m3)": 0.22,
+                        "date_recorded": "2024-11-19T11:16:00"
                     }
-                ]
+                ],
+                "date_recorded": "2025-02-17T12:36:00"
             }
         }
     ]
