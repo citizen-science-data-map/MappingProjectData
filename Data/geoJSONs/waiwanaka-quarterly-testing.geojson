@@ -26,8 +26,7 @@
                         "Turbidity NTU": 0.1,
                         "pH pH Units": 7.8,
                         "Electrical Conductivity (EC) mS/m": 14.0,
-                        "Nitrate-N + Nitrite-N (g/m3)": 0.82,
-                        "count": NaN
+                        "Nitrate-N + Nitrite-N (g/m3)": 0.82
                     },
                     {
                         "url": "",
@@ -35,8 +34,7 @@
                         "Turbidity NTU": 0.16,
                         "pH pH Units": 7.8,
                         "Electrical Conductivity (EC) mS/m": 34.5,
-                        "Nitrate-N + Nitrite-N (g/m3)": 0.82,
-                        "count": NaN
+                        "Nitrate-N + Nitrite-N (g/m3)": 0.82
                     }
                 ]
             }
@@ -65,8 +63,7 @@
                         "Turbidity NTU": 0.45,
                         "pH pH Units": 8.0,
                         "Electrical Conductivity (EC) mS/m": 31.0,
-                        "Nitrate-N + Nitrite-N (g/m3)": 1.98,
-                        "count": NaN
+                        "Nitrate-N + Nitrite-N (g/m3)": 1.98
                     }
                 ]
             }
@@ -96,8 +93,7 @@
                         "Turbidity NTU": 1.91,
                         "pH pH Units": 8.0,
                         "Electrical Conductivity (EC) mS/m": 14.1,
-                        "Nitrate-N + Nitrite-N (g/m3)": 2.5,
-                        "count": NaN
+                        "Nitrate-N + Nitrite-N (g/m3)": 2.5
                     },
                     {
                         "url": "",
@@ -105,8 +101,7 @@
                         "Turbidity NTU": 1.16,
                         "pH pH Units": 8.0,
                         "Electrical Conductivity (EC) mS/m": 13.8,
-                        "Nitrate-N + Nitrite-N (g/m3)": 0.22,
-                        "count": NaN
+                        "Nitrate-N + Nitrite-N (g/m3)": 0.22
                     }
                 ]
             }
