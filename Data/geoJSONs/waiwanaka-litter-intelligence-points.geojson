@@ -1,0 +1,148 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.135302,
+                    -44.694847
+                ]
+            },
+            "properties": {
+                "id": "survey-point-3",
+                "url": "https://litterintelligence.org/data/survey?id=3401",
+                "colour": "#000000",
+                "count": 5,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3401",
+                    "https://litterintelligence.org/data/survey?id=3379",
+                    "https://litterintelligence.org/data/survey?id=3219",
+                    "https://litterintelligence.org/data/survey?id=3186",
+                    "https://litterintelligence.org/data/survey?id=3020"
+                ],
+                "site_name": "I site drain",
+                "survey_type": null,
+                "is_centroid": false,
+                "date_recorded": "2025-01-24T00:00:00"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.137551,
+                    -44.696104
+                ]
+            },
+            "properties": {
+                "id": "survey-point-4",
+                "url": "https://litterintelligence.org/data/survey?id=3402",
+                "colour": "#000000",
+                "count": 1,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3402"
+                ],
+                "site_name": "Brownston St food trucks at Bullock Creek",
+                "survey_type": null,
+                "is_centroid": false,
+                "date_recorded": "2025-01-24T00:00:00"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.137489,
+                    -44.696139
+                ]
+            },
+            "properties": {
+                "id": "survey-point-8",
+                "url": "https://litterintelligence.org/data/survey?id=3380",
+                "colour": "#000000",
+                "count": 2,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3380",
+                    "https://litterintelligence.org/data/survey?id=3184"
+                ],
+                "site_name": "Food Trucks storm drain",
+                "survey_type": null,
+                "is_centroid": false,
+                "date_recorded": "2024-12-17T00:00:00"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.142595,
+                    -44.69076
+                ]
+            },
+            "properties": {
+                "id": "survey-point-12",
+                "url": "https://litterintelligence.org/data/survey?id=3293",
+                "colour": "#000000",
+                "count": 1,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3293"
+                ],
+                "site_name": "Lake front site - Bremner Bay Beach W\u0101naka",
+                "survey_type": null,
+                "is_centroid": false,
+                "date_recorded": "2024-10-21T00:00:00"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.18848,
+                    -44.683289
+                ]
+            },
+            "properties": {
+                "id": "survey-point-21",
+                "url": "https://litterintelligence.org/data/survey?id=3027",
+                "colour": "#000000",
+                "count": 1,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3027"
+                ],
+                "site_name": "Albert Town Opposite shops",
+                "survey_type": null,
+                "is_centroid": false,
+                "date_recorded": "2024-02-28T00:00:00"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.135233,
+                    -44.694845
+                ]
+            },
+            "properties": {
+                "id": "survey-point-22",
+                "url": "https://litterintelligence.org/data/survey?id=2884",
+                "colour": "#000000",
+                "count": 1,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=2884"
+                ],
+                "site_name": "Isite Lane, W\u0101naka",
+                "survey_type": null,
+                "is_centroid": false,
+                "date_recorded": "2024-01-24T00:00:00"
+            }
+        }
+    ]
+}
