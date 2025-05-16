@@ -7,7 +7,7 @@
                 "id": "survey-polygon-1",
                 "url": "https://litterintelligence.org/data/survey?id=3492",
                 "site_name": "Lake front site - Bremner Bay Beach W\u0101naka",
-                "survey_type": null,
+                "survey_type": "beach",
                 "colour": "#000000",
                 "centroid_coordinates": [
                     -44.679690000239326,
@@ -58,7 +58,7 @@
                 "colour": "#000000",
                 "is_centroid": true,
                 "site_name": "Lake front site - Bremner Bay Beach W\u0101naka",
-                "survey_type": null,
+                "survey_type": "beach",
                 "date_recorded": "2025-03-18T00:00:00"
             }
         },
@@ -68,7 +68,7 @@
                 "id": "survey-polygon-2",
                 "url": "https://litterintelligence.org/data/survey?id=3471",
                 "site_name": "Lake front site - Waterfall Creek W\u0101naka",
-                "survey_type": null,
+                "survey_type": "beach",
                 "colour": "#000000",
                 "centroid_coordinates": [
                     -44.687333000406696,
@@ -119,7 +119,7 @@
                 "colour": "#000000",
                 "is_centroid": true,
                 "site_name": "Lake front site - Waterfall Creek W\u0101naka",
-                "survey_type": null,
+                "survey_type": "beach",
                 "date_recorded": "2025-02-22T00:00:00"
             }
         },
@@ -129,7 +129,7 @@
                 "id": "survey-polygon-5",
                 "url": "https://litterintelligence.org/data/survey?id=3388",
                 "site_name": "Lake front site - W\u0101naka outlet",
-                "survey_type": null,
+                "survey_type": "beach",
                 "colour": "#000000",
                 "centroid_coordinates": [
                     -44.664187499999734,
@@ -180,7 +180,7 @@
                 "colour": "#000000",
                 "is_centroid": true,
                 "site_name": "Lake front site - W\u0101naka outlet",
-                "survey_type": null,
+                "survey_type": "beach",
                 "date_recorded": "2025-01-14T00:00:00"
             }
         },
@@ -190,7 +190,7 @@
                 "id": "survey-polygon-6",
                 "url": "https://litterintelligence.org/data/survey?id=3387",
                 "site_name": "Cardrona River",
-                "survey_type": null,
+                "survey_type": "freshwater",
                 "colour": "#000000",
                 "centroid_coordinates": [
                     -44.715921500237286,
@@ -241,7 +241,7 @@
                 "colour": "#000000",
                 "is_centroid": true,
                 "site_name": "Cardrona River",
-                "survey_type": null,
+                "survey_type": "freshwater",
                 "date_recorded": "2024-12-19T00:00:00"
             }
         },
@@ -251,7 +251,7 @@
                 "id": "survey-polygon-9",
                 "url": "https://litterintelligence.org/data/survey?id=3329",
                 "site_name": "Lake front site - Hawea Scott\u2019s Beach",
-                "survey_type": null,
+                "survey_type": "beach",
                 "colour": "#000000",
                 "centroid_coordinates": [
                     -44.60913700000538,
@@ -302,7 +302,7 @@
                 "colour": "#000000",
                 "is_centroid": true,
                 "site_name": "Lake front site - Hawea Scott\u2019s Beach",
-                "survey_type": null,
+                "survey_type": "beach",
                 "date_recorded": "2024-11-17T00:00:00"
             }
         },
@@ -312,7 +312,7 @@
                 "id": "survey-polygon-10",
                 "url": "https://litterintelligence.org/data/survey?id=3318",
                 "site_name": "Lake front site - Wanaka town lakefront",
-                "survey_type": null,
+                "survey_type": "beach",
                 "colour": "#000000",
                 "centroid_coordinates": [
                     -44.69918250000598,
@@ -363,7 +363,7 @@
                 "colour": "#000000",
                 "is_centroid": true,
                 "site_name": "Lake front site - Wanaka town lakefront",
-                "survey_type": null,
+                "survey_type": "beach",
                 "date_recorded": "2024-10-29T00:00:00"
             }
         },
@@ -373,7 +373,7 @@
                 "id": "survey-polygon-11",
                 "url": "https://litterintelligence.org/data/survey?id=3295",
                 "site_name": "Paetara Aspiring Central - Carpark",
-                "survey_type": null,
+                "survey_type": "beach",
                 "colour": "#000000",
                 "centroid_coordinates": [
                     -44.693852501767395,
@@ -424,7 +424,7 @@
                 "colour": "#000000",
                 "is_centroid": true,
                 "site_name": "Paetara Aspiring Central - Carpark",
-                "survey_type": null,
+                "survey_type": "beach",
                 "date_recorded": "2024-10-23T00:00:00"
             }
         },
@@ -434,7 +434,7 @@
                 "id": "survey-polygon-13",
                 "url": "https://litterintelligence.org/data/survey?id=3263",
                 "site_name": "Brownston St at Bullock Creek",
-                "survey_type": null,
+                "survey_type": "beach",
                 "colour": "#000000",
                 "centroid_coordinates": [
                     -44.679690000239326,
@@ -485,7 +485,7 @@
                 "colour": "#000000",
                 "is_centroid": true,
                 "site_name": "Brownston St at Bullock Creek",
-                "survey_type": null,
+                "survey_type": "beach",
                 "date_recorded": "2024-09-20T00:00:00"
             }
         },
@@ -495,7 +495,7 @@
                 "id": "survey-polygon-14",
                 "url": "https://litterintelligence.org/data/survey?id=3226",
                 "site_name": "I site drain",
-                "survey_type": null,
+                "survey_type": "beach",
                 "colour": "#000000",
                 "centroid_coordinates": [
                     -44.6961,
@@ -546,7 +546,7 @@
                 "colour": "#000000",
                 "is_centroid": true,
                 "site_name": "I site drain",
-                "survey_type": null,
+                "survey_type": "beach",
                 "date_recorded": "2024-08-30T00:00:00"
             }
         },
@@ -556,7 +556,7 @@
                 "id": "survey-polygon-16",
                 "url": "https://litterintelligence.org/data/survey?id=3208",
                 "site_name": "Lake front site - Waterfall Creek W\u0101naka",
-                "survey_type": null,
+                "survey_type": "beach",
                 "colour": "#000000",
                 "centroid_coordinates": [
                     -44.687333000406696,
@@ -607,7 +607,7 @@
                 "colour": "#000000",
                 "is_centroid": true,
                 "site_name": "Lake front site - Waterfall Creek W\u0101naka",
-                "survey_type": null,
+                "survey_type": "beach",
                 "date_recorded": "2024-08-20T00:00:00"
             }
         },
@@ -617,7 +617,7 @@
                 "id": "survey-polygon-17",
                 "url": "https://litterintelligence.org/data/survey?id=3156",
                 "site_name": "Lake front site - W\u0101naka outlet",
-                "survey_type": null,
+                "survey_type": "beach",
                 "colour": "#000000",
                 "centroid_coordinates": [
                     -44.664187499999734,
@@ -668,7 +668,7 @@
                 "colour": "#000000",
                 "is_centroid": true,
                 "site_name": "Lake front site - W\u0101naka outlet",
-                "survey_type": null,
+                "survey_type": "beach",
                 "date_recorded": "2024-07-16T00:00:00"
             }
         }
