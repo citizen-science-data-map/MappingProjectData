@@ -23,7 +23,7 @@
                     "https://litterintelligence.org/data/survey?id=3020"
                 ],
                 "site_name": "I site drain",
-                "survey_type": "stormwater",
+                "survey_type": "stormwater ",
                 "is_centroid": false,
                 "date_recorded": "2025-01-24T00:00:00"
             }
@@ -93,7 +93,7 @@
                     "https://litterintelligence.org/data/survey?id=3293"
                 ],
                 "site_name": "Lake front site - Bremner Bay Beach W\u0101naka",
-                "survey_type": "stormwater",
+                "survey_type": "stormwater ",
                 "is_centroid": false,
                 "date_recorded": "2024-10-21T00:00:00"
             }
@@ -116,7 +116,7 @@
                     "https://litterintelligence.org/data/survey?id=3027"
                 ],
                 "site_name": "Albert Town Opposite shops",
-                "survey_type": "stormwater",
+                "survey_type": "stormwater ",
                 "is_centroid": false,
                 "date_recorded": "2024-02-28T00:00:00"
             }
@@ -139,7 +139,7 @@
                     "https://litterintelligence.org/data/survey?id=2884"
                 ],
                 "site_name": "Isite Lane, W\u0101naka",
-                "survey_type": "stormwater",
+                "survey_type": "stormwater ",
                 "is_centroid": false,
                 "date_recorded": "2024-01-24T00:00:00"
             }
