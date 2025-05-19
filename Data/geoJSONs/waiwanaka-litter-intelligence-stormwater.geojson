@@ -1,0 +1,148 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "url": "https://litterintelligence.org/data/survey?id=3401",
+                "site_name": "I site drain",
+                "survey_type": "stormwater",
+                "colour": "#000000",
+                "date_recorded": "2025-01-24T00:00:00",
+                "id": "survey-point-stormwater-3",
+                "count": 5,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3401",
+                    "https://litterintelligence.org/data/survey?id=3379",
+                    "https://litterintelligence.org/data/survey?id=3219",
+                    "https://litterintelligence.org/data/survey?id=3186",
+                    "https://litterintelligence.org/data/survey?id=3020"
+                ],
+                "is_centroid": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.135302,
+                    -44.694847
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "url": "https://litterintelligence.org/data/survey?id=3402",
+                "site_name": "Brownston St food trucks at Bullock Creek",
+                "survey_type": "stormwater",
+                "colour": "#000000",
+                "date_recorded": "2025-01-24T00:00:00",
+                "id": "survey-point-stormwater-4",
+                "count": 1,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3402"
+                ],
+                "is_centroid": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.137551,
+                    -44.696104
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "url": "https://litterintelligence.org/data/survey?id=3380",
+                "site_name": "Food Trucks storm drain",
+                "survey_type": "stormwater",
+                "colour": "#000000",
+                "date_recorded": "2024-12-17T00:00:00",
+                "id": "survey-point-stormwater-8",
+                "count": 2,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3380",
+                    "https://litterintelligence.org/data/survey?id=3184"
+                ],
+                "is_centroid": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.137489,
+                    -44.696139
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "url": "https://litterintelligence.org/data/survey?id=3293",
+                "site_name": "Lake front site - Bremner Bay Beach W\u0101naka",
+                "survey_type": "stormwater",
+                "colour": "#000000",
+                "date_recorded": "2024-10-21T00:00:00",
+                "id": "survey-point-stormwater-12",
+                "count": 1,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3293"
+                ],
+                "is_centroid": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.142595,
+                    -44.69076
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "url": "https://litterintelligence.org/data/survey?id=3027",
+                "site_name": "Albert Town Opposite shops",
+                "survey_type": "stormwater",
+                "colour": "#000000",
+                "date_recorded": "2024-02-28T00:00:00",
+                "id": "survey-point-stormwater-21",
+                "count": 1,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=3027"
+                ],
+                "is_centroid": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.18848,
+                    -44.683289
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "url": "https://litterintelligence.org/data/survey?id=2884",
+                "site_name": "Isite Lane, W\u0101naka",
+                "survey_type": "stormwater",
+                "colour": "#000000",
+                "date_recorded": "2024-01-24T00:00:00",
+                "id": "survey-point-stormwater-22",
+                "count": 1,
+                "urls": [
+                    "https://litterintelligence.org/data/survey?id=2884"
+                ],
+                "is_centroid": false
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.135233,
+                    -44.694845
+                ]
+            }
+        }
+    ]
+}
