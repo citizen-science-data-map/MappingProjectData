@@ -1,0 +1,78 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.151471,
+                    -44.664121
+                ]
+            },
+            "properties": {
+                "id": "microplastics-point-1",
+                "site_name": "Outlet ",
+                "colour": "#000000",
+                "count": 2,
+                "urls": [],
+                "data_points": [
+                    {
+                        "url": "",
+                        "microplastics per 60 litre": 15.18
+                    },
+                    {
+                        "url": "",
+                        "microplastics per 60 litre": NaN
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.135605,
+                    -44.692602
+                ]
+            },
+            "properties": {
+                "id": "microplastics-point-2",
+                "site_name": "Wanaka Spring",
+                "colour": "#000000",
+                "count": 1,
+                "urls": [],
+                "data_points": [
+                    {
+                        "url": "",
+                        "microplastics per 60 litre": 0.75
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    168.715986,
+                    -45.018933
+                ]
+            },
+            "properties": {
+                "id": "microplastics-point-4",
+                "site_name": "Frankton Marina",
+                "colour": "#000000",
+                "count": 1,
+                "urls": [],
+                "data_points": [
+                    {
+                        "url": "",
+                        "microplastics per 60 litre": 25.2
+                    }
+                ]
+            }
+        }
+    ]
+}
