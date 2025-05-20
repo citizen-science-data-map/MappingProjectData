@@ -15,86 +15,72 @@
                 "site_name": "Waterfall Creek",
                 "colour": "#000000",
                 "count": 13,
-                "urls": [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
+                "urls": [],
                 "data_points": [
                     {
                         "url": "",
-                        "Secchi Depth (m)": 11.25,
-                        "date_recorded": "2025-02-15T00:00:00"
+                        "date_recorded": "2025-02-15T00:00:00",
+                        "Secchi Depth (m)": 11.25
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 8.25,
-                        "date_recorded": "2025-01-07T00:00:00"
+                        "date_recorded": "2025-01-07T00:00:00",
+                        "Secchi Depth (m)": 8.25
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.0,
-                        "date_recorded": "2024-12-06T00:00:00"
+                        "date_recorded": "2024-12-06T00:00:00",
+                        "Secchi Depth (m)": 9.0
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 11.75,
-                        "date_recorded": "2024-07-22T00:00:00"
+                        "date_recorded": "2024-07-22T00:00:00",
+                        "Secchi Depth (m)": 11.75
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 14.25,
-                        "date_recorded": "2024-06-24T00:00:00"
+                        "date_recorded": "2024-06-24T00:00:00",
+                        "Secchi Depth (m)": 14.25
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 11.5,
-                        "date_recorded": "2024-05-28T00:00:00"
+                        "date_recorded": "2024-05-28T00:00:00",
+                        "Secchi Depth (m)": 11.5
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 14.25,
-                        "date_recorded": "2024-04-06T00:00:00"
+                        "date_recorded": "2024-04-06T00:00:00",
+                        "Secchi Depth (m)": 14.25
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 8.25,
-                        "date_recorded": "2024-02-21T00:00:00"
+                        "date_recorded": "2024-02-21T00:00:00",
+                        "Secchi Depth (m)": 8.25
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 14.33,
-                        "date_recorded": "2023-11-21T00:00:00"
+                        "date_recorded": "2023-11-21T00:00:00",
+                        "Secchi Depth (m)": 14.33
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 11.25,
-                        "date_recorded": "2023-12-19T00:00:00"
+                        "date_recorded": "2023-12-19T00:00:00",
+                        "Secchi Depth (m)": 11.25
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 14.0,
-                        "date_recorded": "2023-08-21T00:00:00"
+                        "date_recorded": "2023-08-21T00:00:00",
+                        "Secchi Depth (m)": 14.0
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 11.0,
-                        "date_recorded": "2023-07-11T00:00:00"
+                        "date_recorded": "2023-07-11T00:00:00",
+                        "Secchi Depth (m)": 11.0
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 13.0,
-                        "date_recorded": "2023-07-11T00:00:00"
+                        "date_recorded": "2023-07-11T00:00:00",
+                        "Secchi Depth (m)": 13.0
                     }
                 ],
                 "date_recorded": "2025-02-15T00:00:00"
@@ -114,14 +100,12 @@
                 "site_name": "Unnamed 1",
                 "colour": "#000000",
                 "count": 1,
-                "urls": [
-                    ""
-                ],
+                "urls": [],
                 "data_points": [
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.5,
-                        "date_recorded": "2024-04-29T00:00:00"
+                        "date_recorded": "2024-04-29T00:00:00",
+                        "Secchi Depth (m)": 9.5
                     }
                 ],
                 "date_recorded": "2024-04-29T00:00:00"
@@ -141,38 +125,32 @@
                 "site_name": "Unnamed 2",
                 "colour": "#000000",
                 "count": 5,
-                "urls": [
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
+                "urls": [],
                 "data_points": [
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.75,
-                        "date_recorded": "2024-04-23T00:00:00"
+                        "date_recorded": "2024-04-23T00:00:00",
+                        "Secchi Depth (m)": 9.75
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.35,
-                        "date_recorded": "2024-03-29T00:00:00"
+                        "date_recorded": "2024-03-29T00:00:00",
+                        "Secchi Depth (m)": 9.35
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.0,
-                        "date_recorded": "2024-02-27T00:00:00"
+                        "date_recorded": "2024-02-27T00:00:00",
+                        "Secchi Depth (m)": 9.0
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.5,
-                        "date_recorded": "2024-02-27T00:00:00"
+                        "date_recorded": "2024-02-27T00:00:00",
+                        "Secchi Depth (m)": 9.5
                     },
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.25,
-                        "date_recorded": "2024-02-27T00:00:00"
+                        "date_recorded": "2024-02-27T00:00:00",
+                        "Secchi Depth (m)": 9.25
                     }
                 ],
                 "date_recorded": "2024-04-23T00:00:00"
@@ -192,14 +170,12 @@
                 "site_name": "Unnamed 3",
                 "colour": "#000000",
                 "count": 1,
-                "urls": [
-                    ""
-                ],
+                "urls": [],
                 "data_points": [
                     {
                         "url": "",
-                        "Secchi Depth (m)": 10.25,
-                        "date_recorded": "2024-02-27T00:00:00"
+                        "date_recorded": "2024-02-27T00:00:00",
+                        "Secchi Depth (m)": 10.25
                     }
                 ],
                 "date_recorded": "2024-02-27T00:00:00"
@@ -219,14 +195,12 @@
                 "site_name": "Stevenson's Island",
                 "colour": "#000000",
                 "count": 1,
-                "urls": [
-                    ""
-                ],
+                "urls": [],
                 "data_points": [
                     {
                         "url": "",
-                        "Secchi Depth (m)": 9.4,
-                        "date_recorded": "2024-03-01T00:00:00"
+                        "date_recorded": "2024-03-01T00:00:00",
+                        "Secchi Depth (m)": 9.4
                     }
                 ],
                 "date_recorded": "2024-03-01T00:00:00"
