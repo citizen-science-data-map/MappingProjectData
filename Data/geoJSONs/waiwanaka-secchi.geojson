@@ -14,7 +14,7 @@
                 "id": "secchi-point-1",
                 "site_name": "Waterfall Creek",
                 "colour": "#000000",
-                "count": 13,
+                "count": 9,
                 "urls": [],
                 "data_points": [
                     {
@@ -24,12 +24,12 @@
                     },
                     {
                         "url": "",
-                        "date_recorded": "2025-01-07T00:00:00",
+                        "date_recorded": "2025-07-01T00:00:00",
                         "Secchi Depth (m)": 8.25
                     },
                     {
                         "url": "",
-                        "date_recorded": "2024-12-06T00:00:00",
+                        "date_recorded": "2024-06-12T00:00:00",
                         "Secchi Depth (m)": 9.0
                     },
                     {
@@ -49,7 +49,7 @@
                     },
                     {
                         "url": "",
-                        "date_recorded": "2024-04-06T00:00:00",
+                        "date_recorded": "2024-06-04T00:00:00",
                         "Secchi Depth (m)": 14.25
                     },
                     {
@@ -61,7 +61,27 @@
                         "url": "",
                         "date_recorded": "2023-11-21T00:00:00",
                         "Secchi Depth (m)": 14.33
-                    },
+                    }
+                ],
+                "date_recorded": "2025-02-15T00:00:00"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.09756,
+                    -44.68338
+                ]
+            },
+            "properties": {
+                "id": "secchi-point-10",
+                "site_name": "Waterfall Creek",
+                "colour": "#000000",
+                "count": 4,
+                "urls": [],
+                "data_points": [
                     {
                         "url": "",
                         "date_recorded": "2023-12-19T00:00:00",
@@ -74,16 +94,16 @@
                     },
                     {
                         "url": "",
-                        "date_recorded": "2023-07-11T00:00:00",
+                        "date_recorded": "2023-11-07T00:00:00",
                         "Secchi Depth (m)": 11.0
                     },
                     {
                         "url": "",
-                        "date_recorded": "2023-07-11T00:00:00",
+                        "date_recorded": "2023-11-07T00:00:00",
                         "Secchi Depth (m)": 13.0
                     }
                 ],
-                "date_recorded": "2025-02-15T00:00:00"
+                "date_recorded": "2023-12-19T00:00:00"
             }
         },
         {
@@ -199,11 +219,11 @@
                 "data_points": [
                     {
                         "url": "",
-                        "date_recorded": "2024-03-01T00:00:00",
+                        "date_recorded": "2024-01-03T00:00:00",
                         "Secchi Depth (m)": 9.4
                     }
                 ],
-                "date_recorded": "2024-03-01T00:00:00"
+                "date_recorded": "2024-01-03T00:00:00"
             }
         }
     ]
