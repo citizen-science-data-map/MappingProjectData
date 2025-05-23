@@ -14,7 +14,7 @@
                 "id": "secchi-point-1",
                 "site_name": "Waterfall Creek",
                 "colour": "#000000",
-                "count": 9,
+                "count": 13,
                 "urls": [],
                 "data_points": [
                     {
@@ -61,27 +61,7 @@
                         "url": "",
                         "date_recorded": "2023-11-21T00:00:00",
                         "Secchi Depth (m)": 14.33
-                    }
-                ],
-                "date_recorded": "2025-02-15T00:00:00"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    169.09756,
-                    -44.68338
-                ]
-            },
-            "properties": {
-                "id": "secchi-point-10",
-                "site_name": "Waterfall Creek",
-                "colour": "#000000",
-                "count": 4,
-                "urls": [],
-                "data_points": [
+                    },
                     {
                         "url": "",
                         "date_recorded": "2023-12-19T00:00:00",
@@ -103,7 +83,7 @@
                         "Secchi Depth (m)": 13.0
                     }
                 ],
-                "date_recorded": "2023-12-19T00:00:00"
+                "date_recorded": "2025-02-15T00:00:00"
             }
         },
         {
