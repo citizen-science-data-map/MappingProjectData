@@ -8,7 +8,6 @@
                 "site_name": "Cardrona River",
                 "survey_type": "freshwater",
                 "colour": "#000000",
-                "date_recorded": "2024-12-19T00:00:00",
                 "count": 1,
                 "urls": [
                     {
@@ -56,7 +55,7 @@
                 "site_name": "Cardrona River",
                 "survey_type": "freshwater",
                 "colour": "#000000",
-                "date_recorded": "2024-12-19T00:00:00",
+                "date_recorded": null,
                 "count": 1,
                 "urls": [
                     {
