@@ -4,11 +4,11 @@
         {
             "type": "Feature",
             "properties": {
+                "id": "survey-point-stormwater-3",
                 "site_name": "I site drain",
                 "survey_type": "stormwater",
                 "colour": "#000000",
                 "date_recorded": "2025-01-24T00:00:00",
-                "id": "survey-point-stormwater-3",
                 "count": 5,
                 "urls": [
                     {
@@ -45,11 +45,11 @@
         {
             "type": "Feature",
             "properties": {
+                "id": "survey-point-stormwater-4",
                 "site_name": "Brownston St food trucks at Bullock Creek",
                 "survey_type": "stormwater",
                 "colour": "#000000",
                 "date_recorded": "2025-01-24T00:00:00",
-                "id": "survey-point-stormwater-4",
                 "count": 1,
                 "urls": [
                     {
@@ -70,11 +70,11 @@
         {
             "type": "Feature",
             "properties": {
+                "id": "survey-point-stormwater-8",
                 "site_name": "Food Trucks storm drain",
                 "survey_type": "stormwater",
                 "colour": "#000000",
                 "date_recorded": "2024-12-17T00:00:00",
-                "id": "survey-point-stormwater-8",
                 "count": 2,
                 "urls": [
                     {
@@ -99,11 +99,11 @@
         {
             "type": "Feature",
             "properties": {
+                "id": "survey-point-stormwater-12",
                 "site_name": "Paetara Aspiring Central - Carpark",
                 "survey_type": "stormwater",
                 "colour": "#000000",
                 "date_recorded": "2024-10-21T00:00:00",
-                "id": "survey-point-stormwater-12",
                 "count": 1,
                 "urls": [
                     {
@@ -124,11 +124,11 @@
         {
             "type": "Feature",
             "properties": {
+                "id": "survey-point-stormwater-21",
                 "site_name": "Albert Town Opposite shops",
                 "survey_type": "stormwater",
                 "colour": "#000000",
                 "date_recorded": "2024-02-28T00:00:00",
-                "id": "survey-point-stormwater-21",
                 "count": 1,
                 "urls": [
                     {
@@ -149,11 +149,11 @@
         {
             "type": "Feature",
             "properties": {
+                "id": "survey-point-stormwater-22",
                 "site_name": "Isite Lane, W\u0101naka",
                 "survey_type": "stormwater",
                 "colour": "#000000",
                 "date_recorded": "2024-01-24T00:00:00",
-                "id": "survey-point-stormwater-22",
                 "count": 1,
                 "urls": [
                     {
