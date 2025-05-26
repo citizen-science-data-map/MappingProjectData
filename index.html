@@ -121,12 +121,34 @@
             margin-right: 10px;
             margin-left: 10px;
         }
+        .description-dropdown summary {
+            display: flex;          /* Use flexbox to align items in a row */
+            align-items: center;    /* Vertically align the triangle and the heading text */
+            cursor: pointer;        /* Keep the pointer cursor */
+            outline: none;          /* Remove focus outline if desired */
+            padding: 5px 0;         /* Add a little vertical padding for spacing (optional) */
+        }
+
+        .description-dropdown summary h5 {
+            margin: 0 0 0 8px;      /* Add a small margin to the left of the H5 text */
+                                    /* This creates space after the default triangle icon */
+            font-weight: 600;       /* Retain your desired heading weight */
+            color: #111827;        /* Retain your desired heading color */
+            /* No need for 'display: inline;' if the parent 'summary' is flex */
+        }
+
+        .description-dropdown div { /* Style for the content revealed by the dropdown */
+            padding-left: 25px;     /* Indent the content a bit more to align under the heading text */
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="map-controls">
-        <img class="logo" src="https://taiseiwaiwanaka.github.io/MappingProjectData/Data/Resources/Images/wai-wanaka-logo.png" alt="Company Logo">
-        <div class="map-title">Data Map</div>
+        <a href="https://waiwanaka.nz/" target="_blank" rel="noopener noreferrer" aria-label="Visit WAI Wānaka website">
+            <img class="logo" src="https://taiseiwaiwanaka.github.io/MappingProjectData/Data/Resources/Images/wai-wanaka-logo.png" alt="WAI Wānaka Logo - Click to visit website">
+        </a>        <div class="map-title">Data Map</div>
         <button class="icon-button" id="info-button" title="Information"><i class="fas fa-info"></i></button>
         <button class="icon-button" id="get-involved-button" title="Get Involved"><i class="fas fa-hands-helping"></i></button>
     </div>
@@ -173,49 +195,359 @@
         const DATASETS = {
             "secchi": {
                 "id": "secchi-data",
-                "data_type": "Water Clarity",
+                "data_type": "Water Clarity", // Clarified title slightly
                 "geojsonUrl": "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-secchi.geojson",
                 "color": "#47ae81",
-                "cluster": true 
+                "cluster": true,
+                "description": `
+<div class="dataset-description-blurb">
+    <details class="description-dropdown"> 
+        <summary><h5>What is Secchi Depth?</h5></summary>
+        <div>
+            <p>Secchi depth is a simple, reliable way to measure water clarity. It involves lowering a black-and-white disk (called a Secchi disk) into the water and recording the depth at which it disappears from view.</p>
+            <p>Water clarity is influenced by several factors, including:</p>
+            <ul>
+                <li>Algae (phytoplankton) levels</li>
+                <li>Suspended sediment (e.g., from erosion or river inputs)</li>
+                <li>Pollution or dissolved organic matter from runoff</li>
+            </ul>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>What are Acceptable Values?</h5></summary>
+        <div>
+            <p>Secchi depth is measured in meters (m). <strong>Higher values indicate clearer water.</strong> While specific "acceptable" levels can vary by water body type and designated uses, general interpretations are:</p>
+            <ul>
+                <li><strong>Excellent clarity (&gt; 6 meters):</strong> Often found in pristine or low-nutrient oligotrophic lakes.</li>
+                <li><strong>Good clarity (3 – 6 meters):</strong> Generally indicates healthy conditions suitable for recreation and supporting diverse aquatic life.</li>
+                <li><strong>Moderate clarity (1 – 3 meters):</strong> May suggest an increase in algae, sediment, or organic matter. The water might appear somewhat murky.</li>
+                <li><strong>Poor clarity (&lt; 1 meter):</strong> Can be indicative of significant pollution, high erosion leading to turbid water, or substantial algae blooms (eutrophic conditions).</li>
+            </ul>
+            <p>For a lake renowned for its clarity like Lake Wānaka, maintaining high Secchi depths (e.g., often in the <strong>5–10+ meters</strong> range) is common and a key indicator of its excellent water quality.</p>
+            <p><em>The values you see on this map are specific measurements taken at particular locations and times.</em></p>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>What Does It Mean for People Living in the Area?</h5></summary>
+        <div>
+            <ul>
+                <li><strong>Recreational Quality:</strong> Clear water greatly enhances the quality of swimming, boating, fishing, and the overall scenic beauty of the lake, which are important for both community well-being and tourism.</li>
+                <li><strong>Environmental Health Indicator:</strong> Consistent or improving Secchi depth suggests a stable and healthy aquatic ecosystem. A declining trend can be an early warning sign of negative impacts, such as increased nutrient pollution (leading to eutrophication) or sedimentation.</li>
+                <li><strong>Drinking Water Implications:</strong> While not a direct measure of potability, clearer source water generally requires less intensive (and thus less costly) treatment if used for drinking water supplies.</li>
+                <li><strong>Value for Long-Term Monitoring:</strong> Tracking Secchi depth over many years provides a valuable historical record. This data helps scientists and managers detect long-term environmental changes due to factors like climate shifts, evolving land use in the catchment area, or the effectiveness of water quality management initiatives.</li>
+            </ul>
+        </div>
+    </details>
+</div>`
             },
             "stream": {
                 "id": "stream-data",
                 "data_type": "Quarterly Stream Testing",
                 "geojsonUrl": "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-stream-testing.geojson",
                 "color": "#ff7f0e",
-                "cluster": true 
+                "cluster": true,
+                "description": `
+<div class="dataset-description-blurb">
+    <details class="description-dropdown"> 
+        <summary><h5>What Is It?</h5></summary>
+        <div>
+            <p>This dataset includes water quality measurements taken quarterly from streams feeding into Lake Wānaka. These tests help monitor the health of freshwater systems by detecting signs of pollution, erosion, or nutrient runoff.</p>
+            <p>Understanding changes in these indicators over time is crucial for safeguarding aquatic ecosystems, supporting biodiversity, and guiding land use and restoration efforts. Each testing site reports several parameters that indicate the chemical and physical health of the water.</p>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>What Are Acceptable Values?</h5></summary>
+        <div>
+            <p>Below are some common water quality parameters measured, what they indicate, and general guideline ranges often associated with healthy streams. Specific local guidelines or objectives may vary, and context (like underlying geology) can influence some readings.</p>
+            <table class="parameters-table" style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9em;">
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid #ddd; padding: 6px; text-align: left; background-color: #f2f2f2;">Parameter</th>
+                        <th style="border: 1px solid #ddd; padding: 6px; text-align: left; background-color: #f2f2f2;">What It Measures</th>
+                        <th style="border: 1px solid #ddd; padding: 6px; text-align: left; background-color: #f2f2f2;">Typical Guideline Range (Healthy Stream)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Escherichia coli (E. coli) (MPN/100mL)</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Indicator of faecal contamination from humans, livestock, or wildlife.</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Less than 260 MPN/100mL is generally considered suitable for primary contact recreation (e.g., swimming). Consistently lower is better.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Turbidity (NTU)</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Water clarity — influenced by suspended sediment, algae, and pollution.</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Less than 1 NTU is excellent; 1–5 NTU is typical in very clean streams. Higher values indicate murkiness.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 6px;">pH</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Acidity or alkalinity of the water.</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">A range of 6.5 – 8.5 is generally healthy for most aquatic life.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Electrical Conductivity (µS/m)</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">The concentration of dissolved salts and ions in the water, which can indicate inputs from geology or pollution.</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">The provided range of 50 – 250 µS/m (equivalent to 0.05 - 0.25 µS/cm) is very low, typical of near-pristine or rain-fed systems. Many healthy streams might show higher values (e.g., up to 1500 µS/cm or 150,000 µS/m) depending on local geology. Sudden changes are more indicative of issues.</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Nitrate-N + Nitrite-N (g/m³ or mg/L)</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Key nutrients, often originating from fertilizers, animal waste, or wastewater.</td>
+                        <td style="border: 1px solid #ddd; padding: 6px;">Less than 1.0 g/m³ (mg/L) is considered ideal to prevent excessive algae and plant growth. Values consistently above 1.5 g/m³ can contribute to eutrophication (over-enrichment of water bodies).</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 10px; font-size: 0.85em; color: #555;">
+                <em>Note: MPN = Most Probable Number (an estimate of live bacteria). NTU = Nephelometric Turbidity Units (cloudiness). g/m³ (grams per cubic meter) is the same as mg/L (milligrams per liter). The "acceptable values" are general guidelines and not regulatory standards unless specified by local authorities.</em>
+            </p>
+            <p>The data shown on the map represents measurements from specific sampling events and locations.</p>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>What Does It Mean for People Living in the Area?</h5></summary>
+        <div>
+            <ul>
+                <li><strong>Recreation and Health:</strong> Water quality directly impacts safe recreation. For example, elevated E. coli levels can indicate health risks for swimmers. Low turbidity (clear water) and balanced pH enhance the enjoyment of waterways for activities like fishing, kayaking, and simply appreciating nature.</li>
+                <li><strong>Ecosystem Integrity:</strong> The chemical and physical balance of stream water is vital for supporting a diverse range of aquatic life, including insects, native fish (such as kōaro and bullies in NZ), and aquatic plants. High levels of nutrients like nitrates, or significant changes in conductivity or pH, can signal pollution from nearby farms, urban runoff, or other sources, potentially harming sensitive species and disrupting the entire ecosystem.</li>
+                <li><strong>Land Use and Community Action:</strong> Monitoring these indicators helps the community and local authorities make informed decisions about land management practices. This includes choices about riparian (streamside) planting, fencing waterways to prevent livestock access, managing stormwater effectively, and identifying areas where restoration efforts by groups like WAI Wānaka are most needed to improve or protect water quality.</li>
+            </ul>
+        </div>
+    </details>
+</div>`
             },
-            "litterBeach": { 
+            "litterBeach": {
                 "id": "litter-beach-data",
-                "data_type": "Litter (Beach)",
+                "data_type": "Litter Intelligence Data (Beach)", // Standardized title
                 "geojsonUrl": "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-litter-intelligence-beach.geojson",
-                "color": "#f7e568", 
-                "cluster": false,    
-                "survey_type_icon": "icon_type_beach.svg" 
+                "color": "#f7e568",
+                "cluster": false,
+                "survey_type_icon": "icon_type_beach.svg",
+                "description": `
+                <div class="dataset-description-blurb">
+    <details class="description-dropdown"s> 
+        <summary><h5>What Is It?</h5></summary>
+        <div>
+            <p>This dataset is based on community-led beach cleanups and litter surveys, coordinated through the nationwide <strong>Litter Intelligence</strong> citizen science program. Local volunteers systematically collect and categorize litter along defined beach areas using a consistent scientific method. The data is uploaded to a national platform, helping build a picture of how much and what kind of rubbish ends up on Aotearoa’s coasts.</p>
+            <p>Each survey, when clicked on the map and its details viewed, typically provides access to information such as:</p>
+            <ul>
+                <li>The date and specific location of the cleanup.</li>
+                <li>The total count of litter items and often the total weight.</li>
+                <li>A detailed breakdown of the types of items collected.</li>
+            </ul>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>What Kinds of Litter Are Found?</h5></summary>
+        <div>
+            <p>While no amount of litter is acceptable in a natural environment, this dataset helps track patterns and highlight key problem items. Analysis of the collected data often reveals information on:</p>
+            <ul>
+                <li><strong>Item Count:</strong> This can vary significantly, often ranging from dozens to hundreds, or even thousands, of individual pieces of litter per survey, depending on factors like the beach's location, recent weather, and human activity.</li>
+                <li><strong>Common Items:</strong> Frequently found items typically include:
+                    <ul>
+                        <li>Small plastic fragments (often broken down from larger items)</li>
+                        <li>Food wrappers and packaging (e.g., chip bags, confectionery wrappers)</li>
+                        <li>Cigarette butts</li>
+                        <li>Bottles (plastic and glass), cans, and glass shards</li>
+                        <li>Foam and polystyrene pieces</li>
+                        <li>Fishing-related debris (e.g., ropes, nets, buoys in coastal areas)</li>
+                    </ul>
+                </li>
+                <li><strong>Total Weight:</strong> The overall weight of litter collected, usually measured in grams or kilograms, providing another metric for the scale of pollution.</li>
+                <li><strong>Trends:</strong> Conducting repeat surveys at the same site over time allows for the identification of trends, such as seasonal variations in litter types or amounts, litter spikes related to local events or storm activity, or ideally, long-term improvements resulting from waste reduction initiatives.</li>
+            </ul>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>What Does It Mean for People Living in the Area?</h5></summary>
+        <div>
+            <ul>
+                <li><strong>Actionable Insights:</strong> The detailed data helps local communities and authorities understand the potential sources of litter affecting their beaches—whether it’s items predominantly dropped by beachgoers, washed ashore by currents and tides, carried by rivers, or blown from nearby land-based sources.</li>
+                <li><strong>Community Impact & Engagement:</strong> Participation in Litter Intelligence surveys connects residents, school groups, and local volunteers with a shared, positive goal of actively caring for their environment through regular cleanups and systematic data collection.</li>
+                <li><strong>Informed Advocacy & Policy:</strong> The robust data collected provides solid evidence that can be used to support advocacy for reducing single-use plastics, campaigning for improved local waste management infrastructure (like better bin placement or types, and educational signage), and guiding the development of effective regional and national waste policies.</li>
+                <li><strong>Ecological Protection:</strong> The act of removing litter, combined with the data gathered, directly contributes to safeguarding native wildlife, particularly coastal birds and marine species, from the severe risks of ingesting harmful plastic items or becoming entangled in debris.</li>
+            </ul>
+        </div>
+<div>
+                `
             },
-            "litterFreshwater": { 
+            "litterFreshwater": {
                 "id": "litter-freshwater-data",
-                "data_type": "Litter (Freshwater)",
+                "data_type": "Litter Intelligence Data (Freshwater)", // Standardized title
                 "geojsonUrl": "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-litter-intelligence-freshwater.geojson",
                 "color": "#bea9d7",
                 "cluster": false,
-                "survey_type_icon": "icon_type_freshwater.svg"
+                "survey_type_icon": "icon_type_freshwater.svg",
+                "description": `
+                <div class="dataset-description-blurb">
+    <details class="description-dropdown">
+        <summary><h5>What Is It?</h5></summary>
+        <div>
+            <p>This dataset is based on community-led litter surveys and cleanups conducted in <strong>freshwater environments like riverbanks and lakesides</strong>. These efforts are part of the nationwide <strong>Litter Intelligence</strong> citizen science program.</p>
+            <p>Using a standardized methodology, local volunteers collect, categorize, and report litter found along defined areas within these vital freshwater ecosystems. The data is contributed to a national database, helping to track pollution impacting New Zealand's rivers and lakes.</p>
+            <p>When you view details for a survey on this map, the "Survey Events" section in this panel usually includes:</p>
+            <ul>
+                <li>The date and specific location of the freshwater survey.</li>
+                <li>The total count of litter items discovered and often the total weight.</li>
+                <li>A detailed list of the types of litter items found.</li>
+            </ul>
+        </div>
+    </details>
+
+
+    <details class="description-dropdown">
+        <summary><h5>What Kinds of Litter Are Found?</h5></summary>
+        <div>
+            <p>While no amount of litter is acceptable in a natural environment, this dataset helps track patterns and highlight key problem items. Analysis of the collected data often reveals information on:</p>
+            <ul>
+                <li><strong>Item Count:</strong> This can vary significantly, often ranging from dozens to hundreds, or even thousands, of individual pieces of litter per survey, depending on factors like the beach's location, recent weather, and human activity.</li>
+                <li><strong>Common Items:</strong> Frequently found items typically include:
+                    <ul>
+                        <li>Small plastic fragments (often broken down from larger items)</li>
+                        <li>Food wrappers and packaging (e.g., chip bags, confectionery wrappers)</li>
+                        <li>Cigarette butts</li>
+                        <li>Bottles (plastic and glass), cans, and glass shards</li>
+                        <li>Foam and polystyrene pieces</li>
+                        <li>Fishing-related debris (e.g., ropes, nets, buoys in coastal areas)</li>
+                    </ul>
+                </li>
+                <li><strong>Total Weight:</strong> The overall weight of litter collected, usually measured in grams or kilograms, providing another metric for the scale of pollution.</li>
+                <li><strong>Trends:</strong> Conducting repeat surveys at the same site over time allows for the identification of trends, such as seasonal variations in litter types or amounts, litter spikes related to local events or storm activity, or ideally, long-term improvements resulting from waste reduction initiatives.</li>
+            </ul>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>What Does It Mean for People Living in the Area?</h5></summary>
+        <div>
+            <ul>
+                <li><strong>Actionable Insights:</strong> The detailed data helps local communities and authorities understand the potential sources of litter affecting their beaches—whether it’s items predominantly dropped by beachgoers, washed ashore by currents and tides, carried by rivers, or blown from nearby land-based sources.</li>
+                <li><strong>Community Impact & Engagement:</strong> Participation in Litter Intelligence surveys connects residents, school groups, and local volunteers with a shared, positive goal of actively caring for their environment through regular cleanups and systematic data collection.</li>
+                <li><strong>Informed Advocacy & Policy:</strong> The robust data collected provides solid evidence that can be used to support advocacy for reducing single-use plastics, campaigning for improved local waste management infrastructure (like better bin placement or types, and educational signage), and guiding the development of effective regional and national waste policies.</li>
+                <li><strong>Ecological Protection:</strong> The act of removing litter, combined with the data gathered, directly contributes to safeguarding native wildlife, particularly coastal birds and marine species, from the severe risks of ingesting harmful plastic items or becoming entangled in debris.</li>
+            </ul>
+        </div>
+<div>
+                `
             },
-            "litterStormwater": { 
+            "litterStormwater": {
                 "id": "litter-stormwater-data",
-                "data_type": "Litter (Stormwater)",
+                "data_type": "Litter Intelligence Data (Stormwater)", // Standardized title
                 "geojsonUrl": "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-litter-intelligence-stormwater.geojson",
-                "color": "#ef6697", 
+                "color": "#ef6697",
                 "cluster": true,
-                "survey_type_icon": "icon_type_stormwater.svg"
+                "survey_type_icon": "icon_type_stormwater.svg",
+                "description": `
+                <div class="dataset-description-blurb">
+        <details class="description-dropdown">
+        <summary><h5>What Is It?</h5></summary>
+        <div>
+            <p>This dataset highlights findings from community-led litter surveys specifically focused on <strong>stormwater systems – areas around drains, culverts, and urban runoff pathways</strong>. These are part of the nationwide <strong>Litter Intelligence</strong> program.</p>
+            <p>Volunteers use a consistent method to collect, categorize, and report litter in these critical zones. Since stormwater can directly carry land-based litter into our waterways, this data is crucial for understanding and tackling this pollution source. Findings are added to a national database.</p>
+            <p>For each survey shown on the map, clicking to view details in this panel will typically provide in the "Survey Events" section:</p>
+            <ul>
+                <li>The date and specific location of the stormwater-related survey.</li>
+                <li>The total count of litter items and often their combined weight.</li>
+                <li>A breakdown of the litter types, which can indicate common urban pollutants.</li>
+            </ul>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>What Kinds of Litter Are Found?</h5></summary>
+        <div>
+            <p>While no amount of litter is acceptable in a natural environment, this dataset helps track patterns and highlight key problem items. Analysis of the collected data often reveals information on:</p>
+            <ul>
+                <li><strong>Item Count:</strong> This can vary significantly, often ranging from dozens to hundreds, or even thousands, of individual pieces of litter per survey, depending on factors like the beach's location, recent weather, and human activity.</li>
+                <li><strong>Common Items:</strong> Frequently found items typically include:
+                    <ul>
+                        <li>Small plastic fragments (often broken down from larger items)</li>
+                        <li>Food wrappers and packaging (e.g., chip bags, confectionery wrappers)</li>
+                        <li>Cigarette butts</li>
+                        <li>Bottles (plastic and glass), cans, and glass shards</li>
+                        <li>Foam and polystyrene pieces</li>
+                        <li>Fishing-related debris (e.g., ropes, nets, buoys in coastal areas)</li>
+                    </ul>
+                </li>
+                <li><strong>Total Weight:</strong> The overall weight of litter collected, usually measured in grams or kilograms, providing another metric for the scale of pollution.</li>
+                <li><strong>Trends:</strong> Conducting repeat surveys at the same site over time allows for the identification of trends, such as seasonal variations in litter types or amounts, litter spikes related to local events or storm activity, or ideally, long-term improvements resulting from waste reduction initiatives.</li>
+            </ul>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>What Does It Mean for People Living in the Area?</h5></summary>
+        <div>
+            <ul>
+                <li><strong>Actionable Insights:</strong> The detailed data helps local communities and authorities understand the potential sources of litter affecting their beaches—whether it’s items predominantly dropped by beachgoers, washed ashore by currents and tides, carried by rivers, or blown from nearby land-based sources.</li>
+                <li><strong>Community Impact & Engagement:</strong> Participation in Litter Intelligence surveys connects residents, school groups, and local volunteers with a shared, positive goal of actively caring for their environment through regular cleanups and systematic data collection.</li>
+                <li><strong>Informed Advocacy & Policy:</strong> The robust data collected provides solid evidence that can be used to support advocacy for reducing single-use plastics, campaigning for improved local waste management infrastructure (like better bin placement or types, and educational signage), and guiding the development of effective regional and national waste policies.</li>
+                <li><strong>Ecological Protection:</strong> The act of removing litter, combined with the data gathered, directly contributes to safeguarding native wildlife, particularly coastal birds and marine species, from the severe risks of ingesting harmful plastic items or becoming entangled in debris.</li>
+            </ul>
+        </div>
+<div>
+                `
             },
             "microplastics": {
                 "id": "microplastics-data",
                 "data_type": "Microplastics in Water",
                 "geojsonUrl": "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-microplastics.geojson",
-                "color": "#0000FF", 
+                "color": "#0000FF",
                 "cluster": true,
-            }
+                "description": 
+                `<div class="dataset-description-blurb">
+    <details class="description-dropdown"> 
+        <summary><h5>What are Microplastics?</h5></summary>
+        <div>
+            <p>Microplastics are tiny plastic particles less than 5 millimeters in size. They come from:</p>
+            <ul>
+                <li><strong>Primary sources:</strong> Microbeads in cosmetics, synthetic fibers from clothing.</li>
+                <li><strong>Secondary sources:</strong> Breakdown of larger plastics (e.g. bottles, bags) from sunlight, abrasion, or weathering.</li>
+            </ul>
+            <p>These particles can enter freshwater through:</p>
+            <ul>
+                <li>Stormwater runoff</li>
+                <li>Wastewater discharge</li>
+                <li>Degraded litter</li>
+                <li>Atmospheric deposition</li>
+            </ul>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>What are Acceptable Values?</h5></summary>
+        <div>
+            <p>There is <strong>no internationally agreed safe threshold</strong> for microplastics in freshwater yet. However, general observations suggest potential levels of concern:</p>
+            <ul>
+                <li><strong>Low levels:</strong> Approximately 0–10 particles per 60L is considered minimal and likely of lower immediate concern.</li>
+                <li><strong>Moderate levels:</strong> Approximately 10–50 particles per 60L may indicate rising contamination and serve as a cause for monitoring.</li>
+                <li><strong>High levels:</strong> Greater than 50 particles per 60L can be concerning and suggest regular plastic pollution entering the water system.</li>
+            </ul>
+            <p><em>For context, some studies have found:</em></p>
+            <ul>
+                <li><em>Pristine waters often contain below 5 particles per 60L.</em></li>
+                <li><em>Urban or polluted waters can contain 100+ particles per 60L.</em></li>
+            </ul>
+            <p>The values seen on this map represent specific measurements at given times and locations.</p>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>What Does It Mean for People Living in the Area?</h5></summary>
+        <div>
+            <ul>
+                <li><strong>Drinking Water Risk:</strong> While current evidence suggests most microplastics are removed by conventional water treatment processes, the long-term health impacts of exposure, especially to very small nanoplastics, are still being actively researched.</li>
+                <li><strong>Food Chain Contamination:</strong> Fish and other aquatic life can ingest microplastics. This raises concerns about potential transfer through the food chain and impacts on local food safety and ecosystem health.</li>
+                <li><strong>Recreational Use:</strong> High levels of microplastics might indirectly indicate broader water pollution issues that could affect the appeal and safety of recreational water use.</li>
+                <li><strong>Environmental Indicator:</strong> Microplastic levels serve as an important indicator of how much plastic waste is entering and persisting in the local environment. These levels are often linked to factors like stormwater management, littering behavior, and land use practices in the catchment.</li>
+            </ul>
+        </div>
+    </details>
+
+</div>`}
         };
 
         async function loadGeoJSON(dataKey) {
@@ -386,32 +718,34 @@
 
         map.on('load', () => {
             const layerControl = document.getElementById("layer-control");
-            layerControl.innerHTML = ''; 
+            layerControl.innerHTML = ''; // Clear existing controls if any
 
+            // Part 1: Set up all Layer Controls
             Object.keys(DATASETS).forEach(key => {
-                const dataset = DATASETS[key]; 
+                const dataset = DATASETS[key];
                 const label = document.createElement("label");
                 label.classList.add("layer-label");
-                
+
                 let layerIdsToToggle = [];
 
-                if (dataset.cluster) { 
+                // Determine which layers belong to this dataset for toggling
+                if (dataset.cluster) {
                     layerIdsToToggle.push(`${dataset.id}-clusters`);
                     layerIdsToToggle.push(`${dataset.id}-points`);
                     layerIdsToToggle.push(`${dataset.id}-cluster-count`);
                 }
-
+                // For litter, also include polygon and dedicated centroid layers
                 if (dataset.id.startsWith("litter-") && dataset.id.includes("-data")) {
                     layerIdsToToggle.push(`${dataset.id}-polygons-fill`);
                     layerIdsToToggle.push(`${dataset.id}-polygons-outline`);
-                    layerIdsToToggle.push(`${dataset.id}-centroids`);
+                    layerIdsToToggle.push(`${dataset.id}-centroids`); // The dedicated centroid layer
                 }
-                
+
                 if (layerIdsToToggle.length > 0) {
                     label.innerHTML = `
                         <span class="layer-color-circle" style="background-color: ${dataset.color};"></span>
                         <input type="checkbox" id="${dataset.id}-layer-toggle" data-layer-ids='${JSON.stringify(layerIdsToToggle)}' checked /> ${dataset.data_type}
-                    `; 
+                    `;
                     layerControl.appendChild(label);
 
                     document.getElementById(`${dataset.id}-layer-toggle`).addEventListener("change", (event) => {
@@ -420,13 +754,37 @@
                             if (map.getLayer(layerId)) {
                                 map.setLayoutProperty(layerId, "visibility", event.target.checked ? "visible" : "none");
                             } else {
-                                console.warn(`Layer with ID ${layerId} not found for ${dataset.data_type}.`);
+                                console.warn(`Layer with ID ${layerId} not found for ${dataset.data_type} when toggling.`);
                             }
                         });
                     });
                 }
+            }); // End of layer control setup loop
+
+            // Part 2: Load ALL GeoJSON data and add their map layers ONCE
+            const loadAllDataPromises = Object.keys(DATASETS).map(key => loadGeoJSON(key));
+
+            Promise.all(loadAllDataPromises).then(() => {
+                console.log("All datasets' initial sources and layers loaded successfully.");
+
+                // Part 3: (Optional) Move specific layers to the front, if needed
+                // This runs only ONCE after all datasets are processed by loadGeoJSON
+                console.log("Attempting to move microplastics layers to front.");
+                const microplasticsSourceId = DATASETS.microplastics.id;
+                const microplasticsPointsId = `${microplasticsSourceId}-points`;
+                const microplasticsClustersId = `${microplasticsSourceId}-clusters`;
+                const microplasticsClusterCountId = `${microplasticsSourceId}-cluster-count`;
+
+                // Move layers if they exist, from bottom-most of the group to top-most
+                if (map.getLayer(microplasticsClustersId)) map.moveLayer(microplasticsClustersId);
+                if (map.getLayer(microplasticsPointsId)) map.moveLayer(microplasticsPointsId); // Will be above clusters
+                if (map.getLayer(microplasticsClusterCountId)) map.moveLayer(microplasticsClusterCountId); // Will be on top
+
+                console.log("Microplastics layer reordering complete.");
+
+            }).catch(error => {
+                console.error("Error during the Promise.all data loading or layer setup:", error);
             });
-            Object.keys(DATASETS).forEach(loadGeoJSON); 
         });
 
         let selectedFeatureId = null;
@@ -500,97 +858,127 @@
 
             let dataHtml = `<h3>${clickedFeatureProperties.site_name || clickedFeatureProperties.id || 'Selected Feature'}</h3>`;
             
-            const rawDate = datasetInfo.date_recorded
+            const rawDate = clickedFeatureProperties.date_recorded
             console.log(`datasetInfo: ${datasetInfo}`);
             console.log(`raw date: ${rawDate}`);
             const displayDate = clickedFeatureProperties.date_recorded ? formatDisplayDate(clickedFeatureProperties.date_recorded) : "Date not available";
-            if (datasetInfo.id === DATASETS.microplastics.id) {
-                dataHtml += `<p><strong>Date Recorded:</strong> ${rawDate}</p>`;
-            } else {
-                dataHtml += `<p><strong>Date Recorded:</strong> ${displayDate}</p>`;
-            }
-
-            if (clickedFeatureProperties.urls && Array.isArray(clickedFeatureProperties.urls) && clickedFeatureProperties.urls.length > 0) {
-                clickedFeatureProperties.urls.forEach(itemUrl => {
-                    if (itemUrl && typeof itemUrl === 'string') {
-                        dataHtml += `<p><strong>Find out more: </strong> <a href="${itemUrl}" target="_blank">${itemUrl}</a></p>`;
-                    }
-                });
-            } else if (clickedFeatureProperties.url && typeof clickedFeatureProperties.url === 'string') {
-                dataHtml += `<p><strong>Find out more: </strong> <a href="${clickedFeatureProperties.url}" target="_blank">${clickedFeatureProperties.url}</a></p>`;
-            }
 
             const iconBaseUrl = "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/Resources/Images/";
             const iconStyle = "width: 20px; height: 20px; vertical-align: -0.25em; margin-right: 8px;";
+   
+
 
             if (datasetInfo) {
-                let titleSection = `<h4>${datasetInfo.data_type}</h4>`; 
-
+                // 1. Add Data Type Title (with icon for Litter)
+                let titleSection = `<h4>${datasetInfo.data_type}</h4>`;
                 if (datasetInfo.id.startsWith("litter-") && datasetInfo.survey_type_icon) {
-                    const iconFile = datasetInfo.survey_type_icon; 
+                    const iconFile = datasetInfo.survey_type_icon;
                     const iconUrl = `${iconBaseUrl}${iconFile}`;
-                    
-                    let descriptiveTitle = datasetInfo.data_type; 
-
-                    descriptiveTitle = `${datasetInfo.data_type}`;
-                    
-                    titleSection = `<h4><img src="${iconUrl}" alt="${datasetInfo.data_type}" style="${iconStyle}">${descriptiveTitle}</h4>`;
+                    titleSection = `<h4><img src="${iconUrl}" alt="${datasetInfo.data_type}" style="${iconStyle}">${datasetInfo.data_type}</h4>`;
                 }
                 dataHtml += titleSection;
 
+                // 2. Handle Data Display Based on Dataset Type
+                if (datasetInfo.id.startsWith("litter-")) {
+                    // --- This is a LITTER INTELLIGENCE feature ---
+                    console.log(`survery events: ${clickedFeatureProperties.urls}`)
+                    console.log("Processing Litter feature. urls property:", clickedFeatureProperties.urls); // Enhanced log
 
-                if ((datasetInfo.id === DATASETS.secchi.id || datasetInfo.id === DATASETS.stream.id || datasetInfo.id === DATASETS.microplastics.id) && 
-                    clickedFeatureProperties.data_points && Array.isArray(clickedFeatureProperties.data_points)) {
-                    if (datasetInfo.id === DATASETS.secchi.id || datasetInfo.id === DATASETS.microplastics.id) dataHtml += `<h4>Measurements:</h4>`;
-                    if (datasetInfo.id === DATASETS.stream.id) dataHtml += `<h4>Detailed Measurements:</h4>`;
-                    
-                    if (clickedFeatureProperties.data_points.length === 0 && datasetInfo.id === DATASETS.stream.id) {
-                        dataHtml += "<p>No detailed measurements available.</p>";
+                    if (clickedFeatureProperties.urls && Array.isArray(clickedFeatureProperties.urls)) {
+                        // It's a LITTER POINT feature (uses the new 'urls' array)
+                        // This structure comes from your Python script for individual or aggregated litter points.
+                        dataHtml += `<h4>Survey Events:</h4>`;
+
+                        if (clickedFeatureProperties.urls.length > 0) {
+                            clickedFeatureProperties.urls.forEach((event, index) => {
+                                const eventDate = event.date_recorded ? formatDisplayDate(event.date_recorded) : "Date not specified";
+                                const eventUrl = event.url;
+
+                                dataHtml += `<div class="survey-event-item" style="margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #eee;">`;
+                                dataHtml += `  <p style="margin:0 0 4px 0;"><strong>Date:</strong> ${eventDate}</p>`;
+                                if (eventUrl) {
+                                    dataHtml += `  <p style="margin:0;"><strong>Find out more: </strong><a href="${eventUrl}" target="_blank">${eventUrl}</a></p>`;
+                                } else {
+                                    dataHtml += `  <p style="margin:0;"><strong>Find out more:</strong> URL not available</p>`;
+                                }
+                                dataHtml += `</div>`;
+                            });
+                        } else {
+                            dataHtml += "<p>No specific survey event details recorded for this point.</p>";
+                        }
+                    } else if (clickedFeatureProperties.date_recorded || clickedFeatureProperties.url) {
+                        // This is likely a LITTER POLYGON or CENTROID feature.
+                        // These still use top-level 'date_recorded' and 'url' from the Python script.
+                        const featureDate = clickedFeatureProperties.date_recorded ? formatDisplayDate(clickedFeatureProperties.date_recorded) : "Date not available";
+                        dataHtml += `<p><strong>Date Recorded:</strong> ${featureDate}</p>`;
+                        if (clickedFeatureProperties.url && typeof clickedFeatureProperties.url === 'string') {
+                            dataHtml += `<p><strong>Find out more: </strong> <a href="${clickedFeatureProperties.url}" target="_blank">${clickedFeatureProperties.url}</a></p>`;
+                        }
+                    } else {
+                        // Fallback if a litter feature has neither urls nor top-level date/url
+                        dataHtml += "<p>Litter data details are not available in the expected format.</p>";
                     }
 
-                    clickedFeatureProperties.data_points.forEach((dataPoint, index) => {
-                        if (typeof dataPoint === 'object' && dataPoint !== null) {
-                            const detailDate = dataPoint.date_recorded ? formatDisplayDate(dataPoint.date_recorded) : `Data Set ${index + 1}`;
-                            const rawDate = dataPoint.date_recorded;
-                            if (datasetInfo.id === DATASETS.secchi.id && dataPoint.date_recorded) {
-                                for (const key in dataPoint) {
-                                    if (key !== 'url' && key !== 'date_recorded') {
-                                        dataHtml += `<p><strong>Date:</strong> ${detailDate}<br><strong>${key.replace(/_/g, ' ')}:</strong> ${dataPoint[key] !== null && dataPoint[key] !== undefined ? dataPoint[key] : 'N/A'}</p>`;
-                                        break;
+                } else {
+                    // --- This is for NON-LITTER datasets (Secchi, Stream Testing, Microplastics) ---
+
+                    // Handle the 'data_points' array specifically for Secchi, Stream Testing, and Microplastics
+                    if ((datasetInfo.id === DATASETS.secchi.id || datasetInfo.id === DATASETS.stream.id || datasetInfo.id === DATASETS.microplastics.id) &&
+                        clickedFeatureProperties.data_points && Array.isArray(clickedFeatureProperties.data_points) && clickedFeatureProperties.data_points.length > 0) {
+
+                        // Add appropriate heading for the data_points section
+                        if (datasetInfo.id === DATASETS.secchi.id) dataHtml += `<h4>Measurements:</h4>`;
+                        if (datasetInfo.id === DATASETS.microplastics.id) dataHtml += `<h4>Measurements:</h4>`;
+                        if (datasetInfo.id === DATASETS.stream.id) dataHtml += `<h4>Detailed Measurements:</h4>`;
+
+                        clickedFeatureProperties.data_points.forEach((dataPoint, index) => {
+                            if (typeof dataPoint === 'object' && dataPoint !== null) {
+                                const detailDate = dataPoint.date_recorded ? formatDisplayDate(dataPoint.date_recorded) : `Data Set ${index + 1}`;
+
+                                if (datasetInfo.id === DATASETS.secchi.id) {
+                                    for (const key in dataPoint) {
+                                        if (key !== 'url' && key !== 'date_recorded') { // Show the first non-url/date key as the measurement
+                                            dataHtml += `<p><strong>Date:</strong> ${detailDate}<br><strong>${key.replace(/_/g, ' ')}:</strong> ${dataPoint[key] !== null && dataPoint[key] !== undefined ? dataPoint[key] : 'N/A'}</p>`;
+                                            break;
+                                        }
                                     }
+                                } else if (datasetInfo.id === DATASETS.microplastics.id) {
+                                    const microplasticsKey = "microplastics per 60 litre"; // Ensure this key matches your GeoJSON
+                                    const microplasticsValue = dataPoint[microplasticsKey];
+                                    dataHtml += `<div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #eee;">`;
+                                    dataHtml += `  <p style="margin-top:0; margin-bottom: 4px;"><strong>Date:</strong> ${detailDate}</p>`;
+                                    dataHtml += `  <p style="margin-top:0; margin-bottom: 4px;"><strong>${microplasticsKey.replace(/_/g, ' ')}:</strong> ${microplasticsValue !== null && microplasticsValue !== undefined ? microplasticsValue : 'N/A'}</p>`;
+                                    dataHtml += `</div>`;
+                                } else if (datasetInfo.id === DATASETS.stream.id) {
+                                    dataHtml += `<details ${index === 0 ? 'open' : ''}>`;
+                                    dataHtml += `  <summary><strong>${detailDate}</strong></summary><ul>`;
+                                    for (const [key, value] of Object.entries(dataPoint)) {
+                                        if (key === 'url' && !value) continue;
+                                        if (key === 'date_recorded') continue;
+                                        dataHtml += `    <li><strong>${key.replace(/_/g, ' ')}:</strong> ${value !== null && value !== undefined ? value : 'N/A'}</li>`;
+                                    }
+                                    dataHtml += `  </ul></details>`;
                                 }
-                            } else if (datasetInfo.id === DATASETS.stream.id) {
-                                dataHtml += `<details ${index === 0 ? 'open' : ''}>`;
-                                dataHtml += `<summary><strong>${detailDate}</strong></summary><ul>`;
-                                for (const [key, value] of Object.entries(dataPoint)) {
-                                    if (key === 'url' && !value) continue;
-                                    if (key === 'date_recorded') continue;
-                                    dataHtml += `<li><strong>${key.replace(/_/g, ' ')}:</strong> ${value !== null && value !== undefined ? value : 'N/A'}</li>`;
-                                }
-                                dataHtml += `</ul></details>`;
                             }
-                        }
-                    });
-                } 
-            }
-            
-            if (datasetInfo &&
-                !datasetInfo.id.startsWith("litter-") && // Only for non-litter datasets now
-                datasetInfo.id !== DATASETS.secchi.id &&
-                datasetInfo.id !== DATASETS.stream.id &&
-                clickedFeatureProperties.recent_values &&
-                Object.keys(clickedFeatureProperties.recent_values).length > 0) {
-                dataHtml += `<h4>Recent Values:</h4><ul>`;
-                Object.entries(clickedFeatureProperties.recent_values).forEach(([key, value]) => {
-                    dataHtml += `<li><strong>${key.replace(/_/g, ' ')}:</strong> ${value !== null && value !== undefined ? value : 'N/A'}</li>`;
-                });
-                dataHtml += `</ul>`;
-            }
+                        });
+                    } else if (datasetInfo && clickedFeatureProperties.data_points && clickedFeatureProperties.data_points.length === 0) {
+                        // Handle cases where data_points array exists but is empty
+                        if (datasetInfo.id === DATASETS.secchi.id) dataHtml += `<p>No Secchi measurements available for this point.</p>`;
+                        if (datasetInfo.id === DATASETS.microplastics.id) dataHtml += `<p>No microplastics measurements available for this point.</p>`;
+                        if (datasetInfo.id === DATASETS.stream.id) dataHtml += "<p>No detailed measurements available.</p>";
+                    }
+                } // End of non-Litter dataset specific handling
+            } // End of if(datasetInfo)
+            if (datasetInfo.description) {
+                    // Using a div allows the description to contain its own block-level HTML elements.
+                    // The inline style is similar to what you had for the <p> wrapper.
+                    dataHtml += `<div class="dataset-description-section" style="color: #333; margin-top: 0.5em; margin-bottom: 1em; border-bottom: 1px solid #eee; padding-bottom: 1em;">${datasetInfo.description}</div>`;
+                }
 
             dataPanelContent.innerHTML = dataHtml;
             dataPanel.classList.add("open");
             selectedFeatureId = clickedFeatureProperties.id;
-        });
+                    });
 
         document.getElementById('zoom-in').addEventListener('click', () => map.zoomTo(map.getZoom() + 1));
         document.getElementById('zoom-out').addEventListener('click', () => map.zoomTo(map.getZoom() - 1));
@@ -604,6 +992,7 @@
                     <li><strong>Secchi Depth:</strong> Measures water clarity.</li>
                     <li><strong>Stream Testing:</strong> Shows results from water quality tests in streams flowing into the lake.</li>
                     <li><strong>Litter Intelligence:</strong> Indicates locations and information about collected litter, categorized by type (Beach, Freshwater, Stormwater).</li>
+                    <li><strong>Microplastics:</strong> Shows the amount of microplastic pieces are found in various locations. 
                 </ul>
                 <p>Click on a point to see detailed information.</p>
             `;
@@ -613,11 +1002,13 @@
         getInvolvedButton.addEventListener('click', () => {
             dataPanelContent.innerHTML = `
                 <h3>Get Involved!</h3>
-                <p>Details on how to get involved with WAI Wānaka projects will be updated here.</p>
+                <p>If you are interested in getting involved with WAI Wānaka's water mission, follow the links below:</p>
                 <ul>
-                    <li>Volunteer for cleanup events.</li>
-                    <li>Participate in citizen science monitoring.</li>
-                    <li>Support WAI Wānaka initiatives.</li>
+                    <li><a href="https://waiwanaka.nz/adopt-a-drain/" target="_blank">Adopt a Drain</a>.</li>
+                    <li><a href="https://waiwanaka.nz/events/" target="_blank">Volunteer Events</a>.</li>
+                    <li><a href="https://waiwanaka.nz/donate/" target="_blank">Make a Donation</a>.</li>
+                    <li><a href="https://waiwanaka.nz/what-you-can-do/" target="_blank">Take Action at Home</a>.</li>
+                    <li><a href="https://waiwanaka.nz/jobs/" target="_blank">Jobs - work with us</a>.</li>
                 </ul>
                 <p>For more information, please visit the <a href="https://waiwanaka.nz/our-mahi/" target="_blank">WAI Wānaka Website</a>.</p>
             `;
