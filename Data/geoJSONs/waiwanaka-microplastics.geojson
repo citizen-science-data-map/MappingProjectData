@@ -19,13 +19,16 @@
                 "data_points": [
                     {
                         "url": "",
+                        "date_recorded": "Autumn 2024",
                         "microplastics per 60 litre": 15.18
                     },
                     {
                         "url": "",
+                        "date_recorded": "Summer 2025",
                         "microplastics per 60 litre": null
                     }
-                ]
+                ],
+                "date_recorded": "Autumn 2024"
             }
         },
         {
@@ -46,9 +49,11 @@
                 "data_points": [
                     {
                         "url": "",
+                        "date_recorded": "Spring 2024",
                         "microplastics per 60 litre": 0.75
                     }
-                ]
+                ],
+                "date_recorded": "Spring 2024"
             }
         },
         {
@@ -69,9 +74,11 @@
                 "data_points": [
                     {
                         "url": "",
+                        "date_recorded": "Spring 2024",
                         "microplastics per 60 litre": 25.2
                     }
-                ]
+                ],
+                "date_recorded": "Spring 2024"
             }
         }
     ]
