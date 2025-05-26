@@ -11,8 +11,8 @@
                 "date_recorded": "2025-03-18T00:00:00",
                 "id": "survey-polygon-beach-1",
                 "centroid_coordinates": [
-                    -44.679690000239326,
-                    169.12476699965353
+                    -44.679690000239674,
+                    169.12476749965347
                 ]
             },
             "geometry": {
@@ -20,24 +20,24 @@
                 "coordinates": [
                     [
                         [
-                            169.12510257513568,
-                            -44.67930546982493
+                            169.12510251629604,
+                            -44.679305501629
                         ],
                         [
-                            169.12525542486432,
-                            -44.67944853017507
+                            169.12525548370397,
+                            -44.679448498371
                         ],
                         [
-                            169.12443142569003,
-                            -44.68007453017507
+                            169.12443248453033,
+                            -44.680074498371
                         ],
                         [
-                            169.12427857430998,
-                            -44.67993146982493
+                            169.12427951546968,
+                            -44.679931501629
                         ],
                         [
-                            169.12510257513568,
-                            -44.67930546982493
+                            169.12510251629604,
+                            -44.679305501629
                         ]
                     ]
                 ]
@@ -57,8 +57,8 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    169.12476699965353,
-                    -44.679690000239326
+                    169.12476749965347,
+                    -44.679690000239674
                 ]
             }
         },
@@ -249,7 +249,7 @@
             "type": "Feature",
             "properties": {
                 "url": "https://litterintelligence.org/data/survey?id=3318",
-                "site_name": "Lake front site - Wanaka town lakefront",
+                "site_name": "Lake front site - W\u0101naka tree",
                 "survey_type": "beach",
                 "colour": "#000000",
                 "date_recorded": "2024-10-29T00:00:00",
@@ -291,7 +291,7 @@
             "type": "Feature",
             "properties": {
                 "url": "https://litterintelligence.org/data/survey?id=3318",
-                "site_name": "Lake front site - Wanaka town lakefront",
+                "site_name": "Lake front site - W\u0101naka tree",
                 "survey_type": "beach",
                 "colour": "#000000",
                 "date_recorded": "2024-10-29T00:00:00",
@@ -310,7 +310,7 @@
             "type": "Feature",
             "properties": {
                 "url": "https://litterintelligence.org/data/survey?id=3295",
-                "site_name": "Paetara Aspiring Central - Carpark",
+                "site_name": "Lake front site - W\u0101naka town lakefront",
                 "survey_type": "beach",
                 "colour": "#000000",
                 "date_recorded": "2024-10-23T00:00:00",
@@ -352,7 +352,7 @@
             "type": "Feature",
             "properties": {
                 "url": "https://litterintelligence.org/data/survey?id=3295",
-                "site_name": "Paetara Aspiring Central - Carpark",
+                "site_name": "Lake front site - W\u0101naka town lakefront",
                 "survey_type": "beach",
                 "colour": "#000000",
                 "date_recorded": "2024-10-23T00:00:00",
@@ -371,14 +371,14 @@
             "type": "Feature",
             "properties": {
                 "url": "https://litterintelligence.org/data/survey?id=3263",
-                "site_name": "Brownston St at Bullock Creek",
+                "site_name": "Lake front site - Bremner Bay Beach W\u0101naka",
                 "survey_type": "beach",
                 "colour": "#000000",
                 "date_recorded": "2024-09-20T00:00:00",
                 "id": "survey-polygon-beach-13",
                 "centroid_coordinates": [
-                    -44.679690000239326,
-                    169.12476699965353
+                    -44.679690000239674,
+                    169.12476749965347
                 ]
             },
             "geometry": {
@@ -386,24 +386,24 @@
                 "coordinates": [
                     [
                         [
-                            169.12510257513568,
-                            -44.67930546982493
+                            169.12510251629604,
+                            -44.679305501629
                         ],
                         [
-                            169.12525542486432,
-                            -44.67944853017507
+                            169.12525548370397,
+                            -44.679448498371
                         ],
                         [
-                            169.12443142569003,
-                            -44.68007453017507
+                            169.12443248453033,
+                            -44.680074498371
                         ],
                         [
-                            169.12427857430998,
-                            -44.67993146982493
+                            169.12427951546968,
+                            -44.679931501629
                         ],
                         [
-                            169.12510257513568,
-                            -44.67930546982493
+                            169.12510251629604,
+                            -44.679305501629
                         ]
                     ]
                 ]
@@ -413,7 +413,7 @@
             "type": "Feature",
             "properties": {
                 "url": "https://litterintelligence.org/data/survey?id=3263",
-                "site_name": "Brownston St at Bullock Creek",
+                "site_name": "Lake front site - Bremner Bay Beach W\u0101naka",
                 "survey_type": "beach",
                 "colour": "#000000",
                 "date_recorded": "2024-09-20T00:00:00",
@@ -423,8 +423,8 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    169.12476699965353,
-                    -44.679690000239326
+                    169.12476749965347,
+                    -44.679690000239674
                 ]
             }
         },
@@ -432,7 +432,7 @@
             "type": "Feature",
             "properties": {
                 "url": "https://litterintelligence.org/data/survey?id=3226",
-                "site_name": "I site drain",
+                "site_name": "Brownston St at Bullock Creek",
                 "survey_type": "beach",
                 "colour": "#000000",
                 "date_recorded": "2024-08-30T00:00:00",
@@ -474,7 +474,7 @@
             "type": "Feature",
             "properties": {
                 "url": "https://litterintelligence.org/data/survey?id=3226",
-                "site_name": "I site drain",
+                "site_name": "Brownston St at Bullock Creek",
                 "survey_type": "beach",
                 "colour": "#000000",
                 "date_recorded": "2024-08-30T00:00:00",
