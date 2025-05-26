@@ -12,7 +12,7 @@
                 "urls": [
                     {
                         "url": "https://litterintelligence.org/data/survey?id=3387",
-                        "date": "2024-12-19T00:00:00"
+                        "date_recorded": "2024-12-19T00:00:00"
                     }
                 ],
                 "centroid_coordinates": [
@@ -60,7 +60,7 @@
                 "urls": [
                     {
                         "url": "https://litterintelligence.org/data/survey?id=3387",
-                        "date": "2024-12-19T00:00:00"
+                        "date_recorded": "2024-12-19T00:00:00"
                     }
                 ],
                 "is_centroid": true
