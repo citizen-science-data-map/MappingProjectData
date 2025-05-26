@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>WAI Wānaka Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    <link
+    href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
+    rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Barlow:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body { margin: 0; padding: 0; overflow: hidden; font-family: 'Barlow', sans-serif; }
+        #map { 
+            position: absolute; 
+            top: 0px; 
+            bottom: 0; 
+            width: 100%; 
+        }
+        .map-controls { 
+            position: absolute; 
+            top: 0px; 
+            left: 10px;
+            width: 100%; 
+            left: 0px; 
+            z-index: 1000; 
+            display: flex; 
+            align-items: center;  
+            background-color: rgba(255, 255, 255, 0.7);
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 10px;
+        }
+        .map-title {
+            background-color: transparent;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 1.2em;
+            font-weight: 1000;
+            margin-right: 5px;
+            color: #222d47;
+        }
+        .icon-button {
+            background: transparent none;
+            border-color: #005b94;
+            border-width: 2px;
+            border-style: solid;
+            color: #005b94;
+            padding: 8px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+        }
+        .icon-button:hover { background-color: #f0f0f0; }
+        .zoom-controls { position: absolute; bottom: 20px; left: 20px; z-index: 1000; display: flex; flex-direction: column; }
+        .zoom-button {
+            background: white;
+            border-color: #6190b6;
+            border-width: 2px;
+            border-style: solid;
+            color: #6190b6;
+            padding: 10px 15px;
+            margin: 8px 0;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 1.2em;
+            line-height: 1;
+        }
+        .zoom-button:hover { background-color: #f0f0f0; }
+        #data-panel {
+            position: absolute; top: 0px; right: -40%; width: 40%; height: 100%;
+            background-color: #f8f8f8;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease-in-out;
+            padding: 40px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            z-index: 1001;
+            color: #222d47;
+        }
+        #data-panel.open { right: 0; }
+        #data-panel-close { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 1.2em; background: none; border: none; color: #6190b6; }
+        #layer-control {
+            position: absolute; top: 25px; left: 15px;
+            background-color: white;
+            padding: 10px;
+            font-family: 'Barlow', sans-serif;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            margin-top: 60px;
+            color: #222d47;
+        }
+        .layer-color-circle { width: 15px; height: 15px; border-radius: 50%; margin-right: 5px; display: inline-block; }
+        .layer-label { display: flex; align-items: center; margin-bottom: 5px; }
+        #data-panel-content h3 { color: #005b94; font-weight: 500; margin-top: 0; }
+        #data-panel-content h4 { color: #111827; font-weight: 600; text-transform: uppercase; margin-top: 1em; margin-bottom: 0.5em; }
+        #data-panel-content p strong { font-weight: 500; }
+        #data-panel-content a { color: #005b94; text-decoration: none; }
+        #data-panel-content a:hover { text-decoration: underline; }
+        #data-panel-content ul { padding-left: 20px; margin-bottom: 1em; }
+        #data-panel-content li { margin-bottom: 0.5em; }
+        #data-panel-content details summary { font-weight: 500; cursor: pointer; margin-bottom: 0.5em; }
+        #data-panel-content details ul { margin-top: 0.5em; }
+        .logo {
+            max-height: 40px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="map-controls">
+        <img class="logo" src="https://taiseiwaiwanaka.github.io/MappingProjectData/Data/Resources/Images/wai-wanaka-logo.png" alt="Company Logo">
+        <div class="map-title">Data Map</div>
+        <button class="icon-button" id="info-button" title="Information"><i class="fas fa-info"></i></button>
+        <button class="icon-button" id="get-involved-button" title="Get Involved"><i class="fas fa-hands-helping"></i></button>
+    </div>
+    <div id="map"></div>
+    <div class="zoom-controls">
+        <button class="zoom-button" id="zoom-in">+</button>
+        <button class="zoom-button" id="zoom-out">-</button>
+    </div>
+    <div id="data-panel">
+        <button id="data-panel-close">×</button>
+        <div id="data-panel-content"></div>
+    </div>
+    <div id="layer-control">
+        <div class="layer-label">
+        </div>
+    </div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoidGFpc2Vpc2hpbWl6dSIsImEiOiJjbThnczgzeWowNjE4MmxvajNuZWlyc2RwIn0.6pPnVaOpXZkOuMRTXAA6uA';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/taiseishimizu/cm8mhqudl01hi01rgdff74vq5',
+            center: [169.1417, -44.6943],
+            zoom: 9,
+            minZoom: 9,
+            maxBounds: [
+                [167.5, -45.5], // Southwest coordinates [lng, lat]
+                [170, -43.5]  // Northeast coordinates [lng, lat]
+            ],
+            pitchWithRotate: false,
+            dragRotate: false,
+            touchPitch: false,
+            touchZoomRotate: false,
+            maxPitch: 0,
+            bearing: 0 
+        });
+
+        const dataPanel = document.getElementById('data-panel');
+        const dataPanelContent = document.getElementById('data-panel-content');
+        const dataPanelClose = document.getElementById('data-panel-close');
+        const infoButton = document.getElementById('info-button');
+        const getInvolvedButton = document.getElementById('get-involved-button');
+
+        const DATASETS = {
+            "secchi": {
+                "id": "secchi-data",
+                "data_type": "Water Clarity",
+                "geojsonUrl": "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-secchi.geojson",
+                "color": "#47ae81",
+                "cluster": true 
+            },
+            "stream": {
+                "id": "stream-data",
+                "data_type": "Quarterly Stream Testing",
+                "geojsonUrl": "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-stream-testing.geojson",
+                "color": "#ff7f0e",
+                "cluster": true 
+            },
+            "litterBeach": { 
+                "id": "litter-beach-data",
+                "data_type": "Litter (Beach)",
+                "geojsonUrl": "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-litter-intelligence-beach.geojson",
+                "color": "#f7e568", 
+                "cluster": false,    
+                "survey_type_icon": "icon_type_beach.svg" 
+            },
+            "litterFreshwater": { 
+                "id": "litter-freshwater-data",
+                "data_type": "Litter (Freshwater)",
+                "geojsonUrl": "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-litter-intelligence-freshwater.geojson",
+                "color": "#bea9d7",
+                "cluster": false,
+                "survey_type_icon": "icon_type_freshwater.svg"
+            },
+            "litterStormwater": { 
+                "id": "litter-stormwater-data",
+                "data_type": "Litter (Stormwater)",
+                "geojsonUrl": "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-litter-intelligence-stormwater.geojson",
+                "color": "#ef6697", 
+                "cluster": true,
+                "survey_type_icon": "icon_type_stormwater.svg"
+            },
+            "microplastics": {
+                "id": "microplastics-data",
+                "data_type": "Microplastics in Water",
+                "geojsonUrl": "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-microplastics.geojson",
+                "color": "#0000FF", 
+                "cluster": true,
+            }
+        };
+
+        async function loadGeoJSON(dataKey) {
+            const dataset = DATASETS[dataKey];
+            if (!dataset) {
+                console.error(`Dataset configuration not found for key: ${dataKey}`);
+                return;
+            }
+            try {
+                console.log("Fetching GeoJSON from:", dataset.geojsonUrl);
+                const response = await fetch(dataset.geojsonUrl);
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status} for ${dataset.geojsonUrl}`);
+                const geojsonData = await response.json();
+                console.log(`Loaded ${dataset.data_type} data:`, geojsonData);
+
+                if (map.getSource(dataset.id)) {
+                    map.getSource(dataset.id).setData(geojsonData);
+                } else {
+                    map.addSource(dataset.id, {
+                        type: "geojson",
+                        data: geojsonData,
+                        cluster: dataset.cluster || false, // Use the cluster flag from DATASETS
+                        clusterRadius: 50,
+                        clusterMaxZoom: 14 // Only relevant if dataset.cluster is true
+                    });
+                    console.log(`Source added for ${dataset.data_type} with ID: ${dataset.id} (clustering: ${dataset.cluster || false})`);
+                    // Pass the cluster status to addClusterLayers
+                    addClusterLayers(dataset.id, dataset.color, dataset.cluster || false);
+                }
+            } catch (error) {
+                console.error(`Error loading ${dataset.data_type} GeoJSON from ${dataset.geojsonUrl}:`, error);
+            }
+        }
+
+        function addClusterLayers(sourceId, color) {
+            // ---- MODIFIED pointFilter ----
+            // This filter now includes points that:
+            // 1. Are of type "Point".
+            // 2. AND EITHER do not have the 'is_centroid' property OR their 'is_centroid' property is false.
+            // This correctly EXCLUDES points that are explicitly 'is_centroid: true'.
+            const pointFilter = ['all',
+                ['==', ['geometry-type'], 'Point'],
+                ['any',
+                    ['!', ['has', 'is_centroid']],
+                    ['==', ['get', 'is_centroid'], false]
+                ]
+            ];
+
+            // Layer for displaying cluster circles (using the refined pointFilter)
+            map.addLayer({
+                id: `${sourceId}-clusters`,
+                type: 'circle',
+                source: sourceId,
+                filter: ['all', ['has', 'point_count'], pointFilter], // Apply pointFilter here
+                paint: {
+                    'circle-color': [
+                        'step',
+                        ['get', 'point_count'],
+                        color, 10, color, 30, color
+                    ],
+                    'circle-opacity': 0.7,
+                    'circle-radius': [
+                        'step',
+                        ['get', 'point_count'],
+                        15, 10, 20, 30, 25
+                    ]
+                }
+            });
+
+            // Layer for displaying the cluster count (using the refined pointFilter)
+            map.addLayer({
+                id: `${sourceId}-cluster-count`,
+                type: 'symbol',
+                source: sourceId,
+                filter: ['all', ['has', 'point_count'], pointFilter], // Apply pointFilter here
+                layout: {
+                    'text-field': '{point_count_abbreviated}',
+                    'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+                    'text-size': 12
+                },
+                paint: {
+                    'text-color': '#fff'
+                }
+            });
+
+            // Layer for individual points (not in a cluster - e.g., your stormwater points)
+            map.addLayer({
+                id: `${sourceId}-points`,
+                type: 'circle',
+                source: sourceId,
+                filter: ['all', 
+                    ['!', ['has', 'point_count']], // Feature is not part of a cluster
+                    pointFilter                   // Apply the modified pointFilter
+                ],
+                paint: {
+                    'circle-color': color,
+                    'circle-radius': 8,
+                    'circle-opacity': 0.8,
+                }
+            });
+
+            // ---- Polygon and Dedicated Centroid Layers for LITTER ----
+            if (sourceId.startsWith("litter-") && sourceId.includes("-data")) {
+                const polygonFilter = ['==', ['geometry-type'], 'Polygon'];
+                map.addLayer({
+                    id: `${sourceId}-polygons-fill`,
+                    type: 'fill',
+                    source: sourceId,
+                    filter: polygonFilter,
+                    paint: { 'fill-color': color, 'fill-opacity': 0.4 }
+                });
+                map.addLayer({
+                    id: `${sourceId}-polygons-outline`,
+                    type: 'line',
+                    source: sourceId,
+                    filter: polygonFilter,
+                    paint: { 'line-color': color, 'line-width': 2 }
+                });
+
+                // This layer is specifically for 'is_centroid: true' points.
+                // It's kept separate so they can potentially be styled differently
+                // or toggled independently if needed in the future.
+                // It also ensures they are drawn even if they were excluded by pointFilter for general points.
+                // Layer for individual centroid points (not in a cluster)
+                map.addLayer({
+                    id: `${sourceId}-centroids`,
+                    type: 'circle',
+                    source: sourceId,
+                    filter: ['all',
+                        ['!', ['has', 'point_count']],      // Condition 1: Feature is not a cluster
+                        ['==', ['geometry-type'], 'Point'], // Condition 2: Feature is a Point
+                        ['==', ['get', 'is_centroid'], true] // Condition 3: Feature has 'is_centroid' property set to true
+                    ],
+                    paint: {
+                        'circle-color': color,
+                        'circle-radius': 6, // Adjusted for visibility
+                        'circle-opacity': 0.8,
+                        'circle-stroke-width': 1,
+                        'circle-stroke-color': '#ffffff'
+                    }
+                    // Optional: Set a minzoom if they should only appear at higher zoom levels
+                    // minzoom: 14 // (if your clusterMaxZoom is 14)
+                });
+            }
+        }
+
+        function formatDisplayDate(dateString) {
+            if (!dateString || typeof dateString !== 'string') return "Date not available";
+            const trimmedDateString = dateString.trim();
+            const seasons = ["Spring", "Summer", "Autumn", "Winter", "Mid"];
+            const seasonYearRegex = new RegExp(`^(${seasons.join('|')})[ -]?(\\d{4})$`, 'i');
+            if (seasonYearRegex.test(trimmedDateString)) return trimmedDateString;
+            try {
+                const dateObj = new Date(trimmedDateString);
+                if (!isNaN(dateObj.getTime())) {
+                    return dateObj.toLocaleDateString('en-GB', {
+                        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                    });
+                }
+                return trimmedDateString;
+            } catch (e) {
+                return trimmedDateString;
+            }
+        }
+        map.on('zoomend', function() {
+            console.log('Zoom ended. Current zoom level:', map.getZoom());
+        });
+
+        map.on('load', () => {
+            const layerControl = document.getElementById("layer-control");
+            layerControl.innerHTML = ''; 
+
+            Object.keys(DATASETS).forEach(key => {
+                const dataset = DATASETS[key]; 
+                const label = document.createElement("label");
+                label.classList.add("layer-label");
+                
+                let layerIdsToToggle = [];
+
+                if (dataset.cluster) { 
+                    layerIdsToToggle.push(`${dataset.id}-clusters`);
+                    layerIdsToToggle.push(`${dataset.id}-points`);
+                    layerIdsToToggle.push(`${dataset.id}-cluster-count`);
+                }
+
+                if (dataset.id.startsWith("litter-") && dataset.id.includes("-data")) {
+                    layerIdsToToggle.push(`${dataset.id}-polygons-fill`);
+                    layerIdsToToggle.push(`${dataset.id}-polygons-outline`);
+                    layerIdsToToggle.push(`${dataset.id}-centroids`);
+                }
+                
+                if (layerIdsToToggle.length > 0) {
+                    label.innerHTML = `
+                        <span class="layer-color-circle" style="background-color: ${dataset.color};"></span>
+                        <input type="checkbox" id="${dataset.id}-layer-toggle" data-layer-ids='${JSON.stringify(layerIdsToToggle)}' checked /> ${dataset.data_type}
+                    `; 
+                    layerControl.appendChild(label);
+
+                    document.getElementById(`${dataset.id}-layer-toggle`).addEventListener("change", (event) => {
+                        const layerIds = JSON.parse(event.target.dataset.layerIds);
+                        layerIds.forEach(layerId => {
+                            if (map.getLayer(layerId)) {
+                                map.setLayoutProperty(layerId, "visibility", event.target.checked ? "visible" : "none");
+                            } else {
+                                console.warn(`Layer with ID ${layerId} not found for ${dataset.data_type}.`);
+                            }
+                        });
+                    });
+                }
+            });
+            Object.keys(DATASETS).forEach(loadGeoJSON); 
+        });
+
+        let selectedFeatureId = null;
+
+        map.on("click", (event) => {
+            const layersToQuery = [];
+            Object.keys(DATASETS).forEach(key => {
+                const dataset = DATASETS[key];
+                if (dataset.cluster) { 
+                    if (map.getLayer(`${dataset.id}-clusters`)) layersToQuery.push(`${dataset.id}-clusters`);
+                    if (map.getLayer(`${dataset.id}-points`)) layersToQuery.push(`${dataset.id}-points`);
+                }
+                if (dataset.id.startsWith("litter-") && dataset.id.includes("-data")) {
+                    if (map.getLayer(`${dataset.id}-polygons-fill`)) layersToQuery.push(`${dataset.id}-polygons-fill`);
+                    if (map.getLayer(`${dataset.id}-centroids`)) layersToQuery.push(`${dataset.id}-centroids`);
+                }
+            });
+            const uniqueLayersToQuery = [...new Set(layersToQuery)].filter(Boolean);
+
+
+            const features = map.queryRenderedFeatures(event.point, { layers: uniqueLayersToQuery });
+
+            if (!features.length) {
+                dataPanel.classList.remove("open");
+                selectedFeatureId = null;
+                return;
+            }
+
+            const feature = features[0];
+            let clickedFeatureProperties = feature.properties;
+            let featureGeometry = feature.geometry;
+            let featureSourceId = feature.layer.source; 
+
+            if (clickedFeatureProperties.cluster && featureSourceId) {
+                map.getSource(featureSourceId).getClusterExpansionZoom(
+                    clickedFeatureProperties.cluster_id, (err, zoom) => {
+                        if (err) { console.error("Error getting cluster expansion zoom:", err); return; }
+                        map.easeTo({ center: feature.geometry.coordinates, zoom: zoom + 0.5 });
+                    }
+                );
+                dataPanel.classList.remove("open");
+                return;
+            }
+
+            let originalFeature = feature;
+            const source = map.getSource(featureSourceId);
+            if (source && source.type === 'geojson' && source._data && source._data.features) {
+                const foundOriginal = source._data.features.find(f => f.properties && f.properties.id === clickedFeatureProperties.id);
+                if (foundOriginal) originalFeature = foundOriginal;
+            }
+            clickedFeatureProperties = originalFeature.properties || {};
+            featureGeometry = originalFeature.geometry;
+
+            const datasetInfo = Object.values(DATASETS).find(ds => ds.id === featureSourceId); 
+
+
+            let centerCoordinates;
+            if (featureGeometry.type === "Point") {
+                centerCoordinates = featureGeometry.coordinates;
+            } else if (featureGeometry.type === "Polygon") {
+                if (clickedFeatureProperties.centroid_coordinates && Array.isArray(clickedFeatureProperties.centroid_coordinates) && clickedFeatureProperties.centroid_coordinates.length === 2) {
+                    centerCoordinates = [clickedFeatureProperties.centroid_coordinates[1], clickedFeatureProperties.centroid_coordinates[0]];
+                } else if (featureGeometry.coordinates && featureGeometry.coordinates[0] && featureGeometry.coordinates[0][0]) {
+                    centerCoordinates = featureGeometry.coordinates[0][0];
+                } else { centerCoordinates = map.getCenter(); }
+            } else { centerCoordinates = map.getCenter(); }
+
+            if (centerCoordinates && centerCoordinates.length === 2 && !isNaN(centerCoordinates[0]) && !isNaN(centerCoordinates[1])) {
+                map.flyTo({ center: centerCoordinates, zoom: Math.max(map.getZoom(), 15), essential: true });
+            } else { console.error("Invalid centerCoordinates for flyTo:", centerCoordinates); }
+
+            let dataHtml = `<h3>${clickedFeatureProperties.site_name || clickedFeatureProperties.id || 'Selected Feature'}</h3>`;
+            
+            const rawDate = datasetInfo.date_recorded
+            console.log(`datasetInfo: ${datasetInfo}`);
+            console.log(`raw date: ${rawDate}`);
+            const displayDate = clickedFeatureProperties.date_recorded ? formatDisplayDate(clickedFeatureProperties.date_recorded) : "Date not available";
+            if (datasetInfo.id === DATASETS.microplastics.id) {
+                dataHtml += `<p><strong>Date Recorded:</strong> ${rawDate}</p>`;
+            } else {
+                dataHtml += `<p><strong>Date Recorded:</strong> ${displayDate}</p>`;
+            }
+
+            if (clickedFeatureProperties.urls && Array.isArray(clickedFeatureProperties.urls) && clickedFeatureProperties.urls.length > 0) {
+                clickedFeatureProperties.urls.forEach(itemUrl => {
+                    if (itemUrl && typeof itemUrl === 'string') {
+                        dataHtml += `<p><strong>Find out more: </strong> <a href="${itemUrl}" target="_blank">${itemUrl}</a></p>`;
+                    }
+                });
+            } else if (clickedFeatureProperties.url && typeof clickedFeatureProperties.url === 'string') {
+                dataHtml += `<p><strong>Find out more: </strong> <a href="${clickedFeatureProperties.url}" target="_blank">${clickedFeatureProperties.url}</a></p>`;
+            }
+
+            const iconBaseUrl = "https://taiseiwaiwanaka.github.io/MappingProjectData/Data/Resources/Images/";
+            const iconStyle = "width: 20px; height: 20px; vertical-align: -0.25em; margin-right: 8px;";
+
+            if (datasetInfo) {
+                let titleSection = `<h4>${datasetInfo.data_type}</h4>`; 
+
+                if (datasetInfo.id.startsWith("litter-") && datasetInfo.survey_type_icon) {
+                    const iconFile = datasetInfo.survey_type_icon; 
+                    const iconUrl = `${iconBaseUrl}${iconFile}`;
+                    
+                    let descriptiveTitle = datasetInfo.data_type; 
+
+                    descriptiveTitle = `${datasetInfo.data_type}`;
+                    
+                    titleSection = `<h4><img src="${iconUrl}" alt="${datasetInfo.data_type}" style="${iconStyle}">${descriptiveTitle}</h4>`;
+                }
+                dataHtml += titleSection;
+
+
+                if ((datasetInfo.id === DATASETS.secchi.id || datasetInfo.id === DATASETS.stream.id || datasetInfo.id === DATASETS.microplastics.id) && 
+                    clickedFeatureProperties.data_points && Array.isArray(clickedFeatureProperties.data_points)) {
+                    if (datasetInfo.id === DATASETS.secchi.id || datasetInfo.id === DATASETS.microplastics.id) dataHtml += `<h4>Measurements:</h4>`;
+                    if (datasetInfo.id === DATASETS.stream.id) dataHtml += `<h4>Detailed Measurements:</h4>`;
+                    
+                    if (clickedFeatureProperties.data_points.length === 0 && datasetInfo.id === DATASETS.stream.id) {
+                        dataHtml += "<p>No detailed measurements available.</p>";
+                    }
+
+                    clickedFeatureProperties.data_points.forEach((dataPoint, index) => {
+                        if (typeof dataPoint === 'object' && dataPoint !== null) {
+                            const detailDate = dataPoint.date_recorded ? formatDisplayDate(dataPoint.date_recorded) : `Data Set ${index + 1}`;
+                            const rawDate = dataPoint.date_recorded;
+                            if (datasetInfo.id === DATASETS.secchi.id && dataPoint.date_recorded) {
+                                for (const key in dataPoint) {
+                                    if (key !== 'url' && key !== 'date_recorded') {
+                                        dataHtml += `<p><strong>Date:</strong> ${detailDate}<br><strong>${key.replace(/_/g, ' ')}:</strong> ${dataPoint[key] !== null && dataPoint[key] !== undefined ? dataPoint[key] : 'N/A'}</p>`;
+                                        break;
+                                    }
+                                }
+                            } else if (datasetInfo.id === DATASETS.stream.id) {
+                                dataHtml += `<details ${index === 0 ? 'open' : ''}>`;
+                                dataHtml += `<summary><strong>${detailDate}</strong></summary><ul>`;
+                                for (const [key, value] of Object.entries(dataPoint)) {
+                                    if (key === 'url' && !value) continue;
+                                    if (key === 'date_recorded') continue;
+                                    dataHtml += `<li><strong>${key.replace(/_/g, ' ')}:</strong> ${value !== null && value !== undefined ? value : 'N/A'}</li>`;
+                                }
+                                dataHtml += `</ul></details>`;
+                            }
+                        }
+                    });
+                } 
+            }
+            
+            if (datasetInfo &&
+                !datasetInfo.id.startsWith("litter-") && // Only for non-litter datasets now
+                datasetInfo.id !== DATASETS.secchi.id &&
+                datasetInfo.id !== DATASETS.stream.id &&
+                clickedFeatureProperties.recent_values &&
+                Object.keys(clickedFeatureProperties.recent_values).length > 0) {
+                dataHtml += `<h4>Recent Values:</h4><ul>`;
+                Object.entries(clickedFeatureProperties.recent_values).forEach(([key, value]) => {
+                    dataHtml += `<li><strong>${key.replace(/_/g, ' ')}:</strong> ${value !== null && value !== undefined ? value : 'N/A'}</li>`;
+                });
+                dataHtml += `</ul>`;
+            }
+
+            dataPanelContent.innerHTML = dataHtml;
+            dataPanel.classList.add("open");
+            selectedFeatureId = clickedFeatureProperties.id;
+        });
+
+        document.getElementById('zoom-in').addEventListener('click', () => map.zoomTo(map.getZoom() + 1));
+        document.getElementById('zoom-out').addEventListener('click', () => map.zoomTo(map.getZoom() - 1));
+        dataPanelClose.addEventListener('click', () => dataPanel.classList.remove('open'));
+
+        infoButton.addEventListener('click', () => {
+            dataPanelContent.innerHTML = `
+                <h3>About this Data</h3>
+                <p>This map displays various environmental data collected around Lake Wānaka.</p>
+                <ul>
+                    <li><strong>Secchi Depth:</strong> Measures water clarity.</li>
+                    <li><strong>Stream Testing:</strong> Shows results from water quality tests in streams flowing into the lake.</li>
+                    <li><strong>Litter Intelligence:</strong> Indicates locations and information about collected litter, categorized by type (Beach, Freshwater, Stormwater).</li>
+                </ul>
+                <p>Click on a point to see detailed information.</p>
+            `;
+            dataPanel.classList.add('open');
+        });
+
+        getInvolvedButton.addEventListener('click', () => {
+            dataPanelContent.innerHTML = `
+                <h3>Get Involved!</h3>
+                <p>Details on how to get involved with WAI Wānaka projects will be updated here.</p>
+                <ul>
+                    <li>Volunteer for cleanup events.</li>
+                    <li>Participate in citizen science monitoring.</li>
+                    <li>Support WAI Wānaka initiatives.</li>
+                </ul>
+                <p>For more information, please visit the <a href="https://waiwanaka.nz/our-mahi/" target="_blank">WAI Wānaka Website</a>.</p>
+            `;
+            dataPanel.classList.add('open');
+        });
+    </script>
+
+</body>
+</html>
