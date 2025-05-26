@@ -13,23 +13,23 @@
                 "urls": [
                     {
                         "url": "https://litterintelligence.org/data/survey?id=3401",
-                        "date": "2025-01-24T00:00:00"
+                        "date_recorded": "2025-01-24T00:00:00"
                     },
                     {
                         "url": "https://litterintelligence.org/data/survey?id=3379",
-                        "date": "2024-12-17T00:00:00"
+                        "date_recorded": "2024-12-17T00:00:00"
                     },
                     {
                         "url": "https://litterintelligence.org/data/survey?id=3219",
-                        "date": "2024-08-29T00:00:00"
+                        "date_recorded": "2024-08-29T00:00:00"
                     },
                     {
                         "url": "https://litterintelligence.org/data/survey?id=3186",
-                        "date": "2024-11-06T00:00:00"
+                        "date_recorded": "2024-11-06T00:00:00"
                     },
                     {
                         "url": "https://litterintelligence.org/data/survey?id=3020",
-                        "date": "2024-04-17T00:00:00"
+                        "date_recorded": "2024-04-17T00:00:00"
                     }
                 ],
                 "is_centroid": false
@@ -54,7 +54,7 @@
                 "urls": [
                     {
                         "url": "https://litterintelligence.org/data/survey?id=3402",
-                        "date": "2025-01-24T00:00:00"
+                        "date_recorded": "2025-01-24T00:00:00"
                     }
                 ],
                 "is_centroid": false
@@ -79,11 +79,11 @@
                 "urls": [
                     {
                         "url": "https://litterintelligence.org/data/survey?id=3380",
-                        "date": "2024-12-17T00:00:00"
+                        "date_recorded": "2024-12-17T00:00:00"
                     },
                     {
                         "url": "https://litterintelligence.org/data/survey?id=3184",
-                        "date": "2024-06-13T00:00:00"
+                        "date_recorded": "2024-06-13T00:00:00"
                     }
                 ],
                 "is_centroid": false
@@ -108,7 +108,7 @@
                 "urls": [
                     {
                         "url": "https://litterintelligence.org/data/survey?id=3293",
-                        "date": "2024-10-21T00:00:00"
+                        "date_recorded": "2024-10-21T00:00:00"
                     }
                 ],
                 "is_centroid": false
@@ -133,7 +133,7 @@
                 "urls": [
                     {
                         "url": "https://litterintelligence.org/data/survey?id=3027",
-                        "date": "2024-02-28T00:00:00"
+                        "date_recorded": "2024-02-28T00:00:00"
                     }
                 ],
                 "is_centroid": false
@@ -158,7 +158,7 @@
                 "urls": [
                     {
                         "url": "https://litterintelligence.org/data/survey?id=2884",
-                        "date": "2024-01-24T00:00:00"
+                        "date_recorded": "2024-01-24T00:00:00"
                     }
                 ],
                 "is_centroid": false
