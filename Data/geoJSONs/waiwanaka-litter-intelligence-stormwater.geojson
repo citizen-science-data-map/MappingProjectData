@@ -11,12 +11,27 @@
                 "date_recorded": "2025-01-24T00:00:00",
                 "id": "survey-point-stormwater-3",
                 "count": 5,
-                "urls": [
-                    "https://litterintelligence.org/data/survey?id=3401",
-                    "https://litterintelligence.org/data/survey?id=3379",
-                    "https://litterintelligence.org/data/survey?id=3219",
-                    "https://litterintelligence.org/data/survey?id=3186",
-                    "https://litterintelligence.org/data/survey?id=3020"
+                "survey_events": [
+                    {
+                        "date_recorded": "2025-01-24T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3401"
+                    },
+                    {
+                        "date_recorded": "2024-12-17T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3379"
+                    },
+                    {
+                        "date_recorded": "2024-08-29T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3219"
+                    },
+                    {
+                        "date_recorded": "2024-11-06T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3186"
+                    },
+                    {
+                        "date_recorded": "2024-04-17T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3020"
+                    }
                 ],
                 "is_centroid": false
             },
@@ -38,8 +53,11 @@
                 "date_recorded": "2025-01-24T00:00:00",
                 "id": "survey-point-stormwater-4",
                 "count": 1,
-                "urls": [
-                    "https://litterintelligence.org/data/survey?id=3402"
+                "survey_events": [
+                    {
+                        "date_recorded": "2025-01-24T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3402"
+                    }
                 ],
                 "is_centroid": false
             },
@@ -61,9 +79,15 @@
                 "date_recorded": "2024-12-17T00:00:00",
                 "id": "survey-point-stormwater-8",
                 "count": 2,
-                "urls": [
-                    "https://litterintelligence.org/data/survey?id=3380",
-                    "https://litterintelligence.org/data/survey?id=3184"
+                "survey_events": [
+                    {
+                        "date_recorded": "2024-12-17T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3380"
+                    },
+                    {
+                        "date_recorded": "2024-06-13T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3184"
+                    }
                 ],
                 "is_centroid": false
             },
@@ -79,14 +103,17 @@
             "type": "Feature",
             "properties": {
                 "url": "https://litterintelligence.org/data/survey?id=3293",
-                "site_name": "Lake front site - Bremner Bay Beach W\u0101naka",
+                "site_name": "Paetara Aspiring Central - Carpark",
                 "survey_type": "stormwater",
                 "colour": "#000000",
                 "date_recorded": "2024-10-21T00:00:00",
                 "id": "survey-point-stormwater-12",
                 "count": 1,
-                "urls": [
-                    "https://litterintelligence.org/data/survey?id=3293"
+                "survey_events": [
+                    {
+                        "date_recorded": "2024-10-21T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3293"
+                    }
                 ],
                 "is_centroid": false
             },
@@ -108,8 +135,11 @@
                 "date_recorded": "2024-02-28T00:00:00",
                 "id": "survey-point-stormwater-21",
                 "count": 1,
-                "urls": [
-                    "https://litterintelligence.org/data/survey?id=3027"
+                "survey_events": [
+                    {
+                        "date_recorded": "2024-02-28T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3027"
+                    }
                 ],
                 "is_centroid": false
             },
@@ -131,8 +161,11 @@
                 "date_recorded": "2024-01-24T00:00:00",
                 "id": "survey-point-stormwater-22",
                 "count": 1,
-                "urls": [
-                    "https://litterintelligence.org/data/survey?id=2884"
+                "survey_events": [
+                    {
+                        "date_recorded": "2024-01-24T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=2884"
+                    }
                 ],
                 "is_centroid": false
             },
