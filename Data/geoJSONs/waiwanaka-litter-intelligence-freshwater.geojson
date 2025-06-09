@@ -4,17 +4,12 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "aggregated-polygon-freshwater-1",
+                "url": "https://litterintelligence.org/data/survey?id=3387",
                 "site_name": "Cardrona River",
                 "survey_type": "freshwater",
                 "colour": "#000000",
-                "count": 1,
-                "urls": [
-                    {
-                        "url": "https://litterintelligence.org/data/survey?id=3387",
-                        "date_recorded": "2024-12-19T00:00:00"
-                    }
-                ],
+                "date_recorded": "2024-12-19T00:00:00",
+                "id": "survey-polygon-freshwater-6",
                 "centroid_coordinates": [
                     -44.715921500237286,
                     169.15921949963135
@@ -51,18 +46,12 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "aggregated-centroid-freshwater-1",
+                "url": "https://litterintelligence.org/data/survey?id=3387",
                 "site_name": "Cardrona River",
                 "survey_type": "freshwater",
                 "colour": "#000000",
-                "date_recorded": null,
-                "count": 1,
-                "urls": [
-                    {
-                        "url": "https://litterintelligence.org/data/survey?id=3387",
-                        "date_recorded": "2024-12-19T00:00:00"
-                    }
-                ],
+                "date_recorded": "2024-12-19T00:00:00",
+                "id": "survey-centroid-freshwater-6",
                 "is_centroid": true
             },
             "geometry": {
