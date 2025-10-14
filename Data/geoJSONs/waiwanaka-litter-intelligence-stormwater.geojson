@@ -10,7 +10,7 @@
                 "colour": "#000000",
                 "date_recorded": "2025-01-24T00:00:00",
                 "id": "survey-point-stormwater-3",
-                "count": 5,
+                "count": 7,
                 "survey_events": [
                     {
                         "date_recorded": "2025-01-24T00:00:00",
@@ -31,6 +31,14 @@
                     {
                         "date_recorded": "2024-04-17T00:00:00",
                         "url": "https://litterintelligence.org/data/survey?id=3020"
+                    },
+                    {
+                        "date_recorded": "2025-08-14T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3630"
+                    },
+                    {
+                        "date_recorded": "2025-01-24T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3401"
                     }
                 ],
                 "is_centroid": false
@@ -52,11 +60,15 @@
                 "colour": "#000000",
                 "date_recorded": "2025-01-24T00:00:00",
                 "id": "survey-point-stormwater-4",
-                "count": 1,
+                "count": 2,
                 "survey_events": [
                     {
                         "date_recorded": "2025-01-24T00:00:00",
                         "url": "https://litterintelligence.org/data/survey?id=3402"
+                    },
+                    {
+                        "date_recorded": "2025-09-22T00:00:00",
+                        "url": "https://litterintelligence.org/data/survey?id=3655"
                     }
                 ],
                 "is_centroid": false
