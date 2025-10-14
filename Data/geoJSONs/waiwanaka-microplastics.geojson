@@ -80,6 +80,31 @@
                 ],
                 "date_recorded": "Spring 2024"
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    169.135693,
+                    -44.693178
+                ]
+            },
+            "properties": {
+                "id": "microplastics-point-5",
+                "site_name": "Bullock Creek",
+                "colour": "#000000",
+                "count": 1,
+                "urls": [],
+                "data_points": [
+                    {
+                        "url": "",
+                        "date_recorded": "Autumn 2025",
+                        "microplastics per 60 litre": 22.0
+                    }
+                ],
+                "date_recorded": "Autumn 2025"
+            }
         }
     ]
 }
