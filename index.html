@@ -105,6 +105,26 @@
             margin-top: 60px;
             color: #222d47;
         }
+        #data-access-alert {
+            position: absolute;
+            top: 84px;
+            right: 15px;
+            z-index: 1002;
+            max-width: 520px;
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: 1px solid #dc2626;
+            background-color: rgba(254, 242, 242, 0.95);
+            color: #7f1d1d;
+            font-size: 13px;
+            line-height: 1.4;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+        #data-access-alert strong {
+            display: block;
+            margin-bottom: 4px;
+        }
         .layer-color-circle { width: 15px; height: 15px; border-radius: 50%; margin-right: 5px; display: inline-block; }
         .layer-label { display: flex; align-items: center; margin-bottom: 5px; }
         #data-panel-content h3 { color: #005b94; font-weight: 500; margin-top: 0; }
@@ -116,6 +136,10 @@
         #data-panel-content li { margin-bottom: 0.5em; }
         #data-panel-content details summary { font-weight: 500; cursor: pointer; margin-bottom: 0.5em; }
         #data-panel-content details ul { margin-top: 0.5em; }
+        #data-panel-content .gyfw-date-list details { margin-bottom: 8px; }
+        #data-panel-content .gyfw-date-list summary { margin-bottom: 0; }
+        #data-panel-content .gyfw-date-list ul { margin-top: 8px; margin-bottom: 8px; padding-left: 18px; }
+        #data-panel-content .gyfw-date-list .gyfw-record-label { margin: 6px 0 2px 0; font-size: 0.92em; color: #374151; }
         .logo {
             max-height: 40px;
             margin-right: 10px;
@@ -165,6 +189,7 @@
         <div class="layer-label">
         </div>
     </div>
+    <div id="data-access-alert"></div>
 
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoidGFpc2Vpc2hpbWl6dSIsImEiOiJjbThnczgzeWowNjE4MmxvajNuZWlyc2RwIn0.6pPnVaOpXZkOuMRTXAA6uA';
@@ -191,12 +216,25 @@
         const dataPanelClose = document.getElementById('data-panel-close');
         const infoButton = document.getElementById('info-button');
         const getInvolvedButton = document.getElementById('get-involved-button');
+        const dataAccessAlert = document.getElementById('data-access-alert');
+        const failedDatasetLoads = new Map();
+        const isFileProtocol = window.location.protocol === "file:";
+        const isLocalHost = ["127.0.0.1", "localhost"].includes(window.location.hostname);
+
+        function isLocalGeojsonPath(url) {
+            return (
+                url.startsWith("Data/") ||
+                url.startsWith("/Data/") ||
+                url.startsWith("./Data/") ||
+                url.startsWith("file://")
+            );
+        }
 
         const DATASETS = {
             "secchi": {
                 "id": "secchi-data",
                 "data_type": "Water Clarity", // Clarified title slightly
-                "geojsonUrl": "https://citizen-science-data-map.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-secchi.geojson",
+                "geojsonUrl": "https://raw.githubusercontent.com/citizen-science-data-map/MappingProjectData/main/Data/geoJSONs/waiwanaka-secchi.geojson",
                 "color": "#47ae81",
                 "cluster": true,
                 "description": `
@@ -245,7 +283,7 @@
             "stream": {
                 "id": "stream-data",
                 "data_type": "Quarterly Stream Testing",
-                "geojsonUrl": "https://citizen-science-data-map.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-stream-testing.geojson",
+                "geojsonUrl": "https://raw.githubusercontent.com/citizen-science-data-map/MappingProjectData/main/Data/geoJSONs/waiwanaka-stream-testing.geojson",
                 "color": "#ff7f0e",
                 "cluster": true,
                 "description": `
@@ -320,7 +358,7 @@
             "litterBeach": {
                 "id": "litter-beach-data",
                 "data_type": "Litter Intelligence Data (Beach)", // Standardized title
-                "geojsonUrl": "https://citizen-science-data-map.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-litter-intelligence-beach.geojson",
+                "geojsonUrl": "https://raw.githubusercontent.com/citizen-science-data-map/MappingProjectData/main/Data/geoJSONs/waiwanaka-litter-intelligence-beach.geojson",
                 "color": "#f7e568",
                 "cluster": false,
                 "survey_type_icon": "icon_type_beach.svg",
@@ -377,7 +415,7 @@
             "litterFreshwater": {
                 "id": "litter-freshwater-data",
                 "data_type": "Litter Intelligence Data (Freshwater)", // Standardized title
-                "geojsonUrl": "https://citizen-science-data-map.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-litter-intelligence-freshwater.geojson",
+                "geojsonUrl": "https://raw.githubusercontent.com/citizen-science-data-map/MappingProjectData/main/Data/geoJSONs/waiwanaka-litter-intelligence-freshwater.geojson",
                 "color": "#bea9d7",
                 "cluster": false,
                 "survey_type_icon": "icon_type_freshwater.svg",
@@ -436,7 +474,7 @@
             "litterStormwater": {
                 "id": "litter-stormwater-data",
                 "data_type": "Litter Intelligence Data (Stormwater)", // Standardized title
-                "geojsonUrl": "https://citizen-science-data-map.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-litter-intelligence-stormwater.geojson",
+                "geojsonUrl": "https://raw.githubusercontent.com/citizen-science-data-map/MappingProjectData/main/Data/geoJSONs/waiwanaka-litter-intelligence-stormwater.geojson",
                 "color": "#ef6697",
                 "cluster": true,
                 "survey_type_icon": "icon_type_stormwater.svg",
@@ -494,7 +532,7 @@
             "microplastics": {
                 "id": "microplastics-data",
                 "data_type": "Microplastics in Water",
-                "geojsonUrl": "https://citizen-science-data-map.github.io/MappingProjectData/Data/geoJSONs/waiwanaka-microplastics.geojson",
+                "geojsonUrl": "https://raw.githubusercontent.com/citizen-science-data-map/MappingProjectData/main/Data/geoJSONs/waiwanaka-microplastics.geojson",
                 "color": "#0000FF",
                 "cluster": true,
                 "description": 
@@ -547,8 +585,177 @@
         </div>
     </details>
 
-</div>`}
+</div>`},
+            "gyfw": {
+                "id": "gyfw-data",
+                "data_type": "Get Your Feet Wet (GYFW) Stream Health",
+                "geojsonUrl": "https://raw.githubusercontent.com/citizen-science-data-map/MappingProjectData/main/Data/geoJSONs/waiwanaka-gyfw.geojson",
+                "color": "#dc2626",
+                "cluster": true,
+                "description":
+                `<div class="dataset-description-blurb">
+    <details class="description-dropdown">
+        <summary><h5>What Is It?</h5></summary>
+        <div>
+            <p>Get Your Feet Wet (GYFW) is a practical stream health assessment used by staff and volunteers to monitor stream condition over time.</p>
+            <p>Each survey captures observations from a specific site visit, allowing trends to be tracked across seasons and years.</p>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>What Is Measured?</h5></summary>
+        <div>
+            <p>GYFW records can include field indicators such as:</p>
+            <ul>
+                <li><strong>Stream Health Score:</strong> A summary score for overall condition at the site.</li>
+                <li><strong>Habitat Quality:</strong> Notes on stream habitat structure and suitability for aquatic life.</li>
+                <li><strong>Macroinvertebrate Indicators:</strong> Signs of stream ecological condition based on in-stream life.</li>
+                <li><strong>Bank Stability:</strong> Observations of erosion risk and bank condition.</li>
+                <li><strong>Water Clarity Notes:</strong> Visual observations that help explain short-term changes.</li>
+            </ul>
+            <p>The exact fields shown depend on what was entered in the uploaded workbook.</p>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>How To Interpret This Data</h5></summary>
+        <div>
+            <p>Each map point may contain one or multiple assessment events from the same location.</p>
+            <ul>
+                <li>Open a point to review both recent and historical survey entries.</li>
+                <li>Compare repeated records at the same site to identify improving or declining trends.</li>
+                <li>Use notes and indicator values together, rather than relying on a single number.</li>
+            </ul>
+        </div>
+    </details>
+
+    <details class="description-dropdown">
+        <summary><h5>Why It Matters For Local Communities</h5></summary>
+        <div>
+            <ul>
+                <li><strong>Early Warning:</strong> Repeated assessments help detect stream stress before problems become severe.</li>
+                <li><strong>Better Planning:</strong> Results support decisions on restoration, riparian planting, and maintenance priorities.</li>
+                <li><strong>Community Action:</strong> A clear local record helps volunteers and staff focus effort where it has the greatest impact.</li>
+            </ul>
+        </div>
+    </details>
+</div>`
+            }
         };
+
+        function withCacheBust(url) {
+            const separator = url.includes("?") ? "&" : "?";
+            return `${url}${separator}t=${Date.now()}`;
+        }
+
+        function getGitHubTargetFromQuery() {
+            const params = new URLSearchParams(window.location.search);
+            const owner = (params.get("gh_owner") || "").trim();
+            const repo = (params.get("gh_repo") || "").trim();
+            const branch = (params.get("gh_branch") || "").trim() || "main";
+            const safePartPattern = /^[A-Za-z0-9._-]+$/;
+
+            if (!owner || !repo) return null;
+            if (!safePartPattern.test(owner) || !safePartPattern.test(repo) || !safePartPattern.test(branch)) {
+                return null;
+            }
+            return { owner, repo, branch };
+        }
+
+        function getGeojsonRepoPath(url) {
+            const marker = "/Data/geoJSONs/";
+            const markerIndex = url.indexOf(marker);
+            if (markerIndex === -1) return null;
+            const filePart = url.substring(markerIndex + marker.length).split("?")[0];
+            return `Data/geoJSONs/${filePart}`;
+        }
+
+        function applyGitHubTarget(url) {
+            const target = getGitHubTargetFromQuery();
+            if (!target) return url;
+
+            const repoPath = getGeojsonRepoPath(url);
+            if (!repoPath) return url;
+            return `https://raw.githubusercontent.com/${target.owner}/${target.repo}/${target.branch}/${repoPath}`;
+        }
+
+        function getPinnedRevision() {
+            const rev = new URLSearchParams(window.location.search).get("rev");
+            if (!rev) return null;
+            return /^[0-9a-f]{7,40}$/i.test(rev) ? rev : null;
+        }
+
+        function applyPinnedRevision(url) {
+            const pinnedRevision = getPinnedRevision();
+            if (!pinnedRevision) return url;
+
+            const rawPattern = /^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/([^/]+)\/(.+)$/;
+            const match = url.match(rawPattern);
+            if (!match) return url;
+
+            const owner = match[1];
+            const repo = match[2];
+            const filePath = match[4];
+            return `https://raw.githubusercontent.com/${owner}/${repo}/${pinnedRevision}/${filePath}`;
+        }
+
+        function buildGeojsonFallbackUrls(primaryUrl) {
+            // Single source of truth: always read from Git raw URL.
+            const targetUrl = applyPinnedRevision(applyGitHubTarget(primaryUrl));
+            return [withCacheBust(targetUrl)];
+        }
+
+        async function fetchGeoJSONWithFallback(dataset) {
+            let lastError = null;
+            let emptyResult = null;
+            const shouldRetryEmpty = isLocalHost && dataset.id === "gyfw-data";
+            const maxEmptyRetries = shouldRetryEmpty ? 6 : 0;
+            const retryDelayMs = 1500;
+
+            for (let retry = 0; retry <= maxEmptyRetries; retry++) {
+                const candidateUrls = buildGeojsonFallbackUrls(dataset.geojsonUrl);
+
+                for (const candidateUrl of candidateUrls) {
+                    try {
+                        console.log(`Trying GeoJSON URL for ${dataset.data_type}:`, candidateUrl);
+                        const response = await fetch(candidateUrl, { cache: "no-store" });
+                        if (!response.ok) {
+                            if (isFileProtocol && isLocalGeojsonPath(candidateUrl)) {
+                                lastError = new Error(
+                                    `[LOCAL_FILE_ACCESS] Cannot access local GeoJSON while using file:// (${candidateUrl})`
+                                );
+                            } else {
+                                lastError = new Error(`HTTP ${response.status} for ${candidateUrl}`);
+                            }
+                            continue;
+                        }
+                        const geojsonData = await response.json();
+                        const featureCount = Array.isArray(geojsonData?.features) ? geojsonData.features.length : 0;
+                        emptyResult = { geojsonData, sourceUrl: candidateUrl };
+
+                        if (featureCount > 0) {
+                            return { geojsonData, sourceUrl: candidateUrl };
+                        }
+                    } catch (error) {
+                        if (isFileProtocol && isLocalGeojsonPath(candidateUrl)) {
+                            lastError = new Error(
+                                `[LOCAL_FILE_ACCESS] Browser blocked local GeoJSON request (${candidateUrl})`
+                            );
+                        } else {
+                            lastError = error;
+                        }
+                    }
+                }
+
+                if (emptyResult && retry < maxEmptyRetries) {
+                    console.warn(`Empty ${dataset.data_type} data from Git. Retrying (${retry + 1}/${maxEmptyRetries})...`);
+                    await new Promise(resolve => setTimeout(resolve, retryDelayMs));
+                }
+            }
+
+            if (emptyResult) return emptyResult;
+            throw lastError || new Error(`All GeoJSON URL candidates failed for ${dataset.data_type}`);
+        }
 
         async function loadGeoJSON(dataKey) {
             const dataset = DATASETS[dataKey];
@@ -557,11 +764,8 @@
                 return;
             }
             try {
-                console.log("Fetching GeoJSON from:", dataset.geojsonUrl);
-                const response = await fetch(dataset.geojsonUrl);
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status} for ${dataset.geojsonUrl}`);
-                const geojsonData = await response.json();
-                console.log(`Loaded ${dataset.data_type} data:`, geojsonData);
+                const { geojsonData, sourceUrl } = await fetchGeoJSONWithFallback(dataset);
+                console.log(`Loaded ${dataset.data_type} data from ${sourceUrl}:`, geojsonData);
 
                 if (map.getSource(dataset.id)) {
                     map.getSource(dataset.id).setData(geojsonData);
@@ -577,9 +781,49 @@
                     // Pass the cluster status to addClusterLayers
                     addClusterLayers(dataset.id, dataset.color, dataset.cluster || false);
                 }
+
+                if (failedDatasetLoads.has(dataKey)) {
+                    failedDatasetLoads.delete(dataKey);
+                    renderDataAccessAlert();
+                }
             } catch (error) {
-                console.error(`Error loading ${dataset.data_type} GeoJSON from ${dataset.geojsonUrl}:`, error);
+                console.error(`Error loading ${dataset.data_type} GeoJSON:`, error);
+                failedDatasetLoads.set(dataKey, {
+                    datasetName: dataset.data_type,
+                    primaryUrl: dataset.geojsonUrl,
+                    message: error && error.message ? error.message : String(error)
+                });
+                renderDataAccessAlert();
             }
+        }
+
+        function renderDataAccessAlert() {
+            if (!failedDatasetLoads.size) {
+                dataAccessAlert.style.display = "none";
+                dataAccessAlert.innerHTML = "";
+                return;
+            }
+
+            const lines = Array.from(failedDatasetLoads.values()).map(item => {
+                return `<div><strong>${item.datasetName}</strong> Data source is not accessible:<br>${item.primaryUrl}</div>`;
+            });
+
+            const hasLocalFileAccessIssue = Array.from(failedDatasetLoads.values()).some(item => {
+                return typeof item.message === "string" && item.message.includes("[LOCAL_FILE_ACCESS]");
+            });
+
+            let localFileHint = "";
+            if (hasLocalFileAccessIssue) {
+                localFileHint = `
+                <div style="margin-top:8px">
+                    <strong>Local File Access Failed</strong>
+                    <div>You opened the page with <code>file://</code>, and the browser blocked local GeoJSON access.</div>
+                    <div>Please run a local server, for example: <code>py -m http.server 8000</code>, then open <code>http://127.0.0.1:8000/WAIWanaka%20(1).html</code>.</div>
+                </div>`;
+            }
+
+            dataAccessAlert.innerHTML = `<strong>Data Access Error</strong>${lines.join("<hr style='border:0;border-top:1px solid #f5b4b4;margin:8px 0;'>")}${localFileHint}`;
+            dataAccessAlert.style.display = "block";
         }
 
         function addClusterLayers(sourceId, color) {
@@ -711,6 +955,15 @@
             } catch (e) {
                 return trimmedDateString;
             }
+        }
+
+        function hasDisplayValue(value) {
+            if (value === null || value === undefined) return false;
+            if (typeof value === "number") return !Number.isNaN(value);
+            const normalized = String(value).trim();
+            if (!normalized) return false;
+            const lower = normalized.toLowerCase();
+            return !["n/a", "na", "null", "none"].includes(lower);
         }
         map.on('zoomend', function() {
             console.log('Zoom ended. Current zoom level:', map.getZoom());
@@ -920,36 +1173,101 @@
                     }
 
                 } else {
-                    // --- This is for NON-LITTER datasets (Secchi, Stream Testing, Microplastics) ---
+                    // --- This is for NON-LITTER datasets (Secchi, Stream Testing, Microplastics, GYFW) ---
+                    const pointBasedDatasetIds = [
+                        DATASETS.secchi.id,
+                        DATASETS.stream.id,
+                        DATASETS.microplastics.id,
+                        DATASETS.gyfw.id
+                    ];
 
-                    // Handle the 'data_points' array specifically for Secchi, Stream Testing, and Microplastics
-                    if ((datasetInfo.id === DATASETS.secchi.id || datasetInfo.id === DATASETS.stream.id || datasetInfo.id === DATASETS.microplastics.id) &&
-                        clickedFeatureProperties.data_points && Array.isArray(clickedFeatureProperties.data_points) && clickedFeatureProperties.data_points.length > 0) {
+                    if (
+                        pointBasedDatasetIds.includes(datasetInfo.id) &&
+                        clickedFeatureProperties.data_points &&
+                        Array.isArray(clickedFeatureProperties.data_points) &&
+                        clickedFeatureProperties.data_points.length > 0
+                    ) {
+                        if (datasetInfo.id === DATASETS.gyfw.id) {
+                            dataHtml += `<h4>Detailed Measurements:</h4>`;
 
-                        // Add appropriate heading for the data_points section
-                        if (datasetInfo.id === DATASETS.secchi.id) dataHtml += `<h4>Measurements:</h4>`;
-                        if (datasetInfo.id === DATASETS.microplastics.id) dataHtml += `<h4>Measurements:</h4>`;
-                        if (datasetInfo.id === DATASETS.stream.id) dataHtml += `<h4>Detailed Measurements:</h4>`;
+                            // Render GYFW as a date-based dropdown list per location.
+                            // Multiple records on the same date are grouped into one dropdown item.
+                            const groupedByDate = clickedFeatureProperties.data_points.reduce((acc, point, pointIndex) => {
+                                if (typeof point !== 'object' || point === null) return acc;
+                                const rawDate = (typeof point.date_recorded === 'string' && point.date_recorded.trim())
+                                    ? point.date_recorded.trim()
+                                    : `__undated_${pointIndex}`;
+                                if (!acc.has(rawDate)) acc.set(rawDate, []);
+                                acc.get(rawDate).push(point);
+                                return acc;
+                            }, new Map());
 
-                        clickedFeatureProperties.data_points.forEach((dataPoint, index) => {
-                            if (typeof dataPoint === 'object' && dataPoint !== null) {
+                            const isSortableDate = (value) => !String(value).startsWith('__undated_') && !Number.isNaN(new Date(value).getTime());
+                            const sortedDateKeys = Array.from(groupedByDate.keys()).sort((a, b) => {
+                                const aSortable = isSortableDate(a);
+                                const bSortable = isSortableDate(b);
+                                if (aSortable && bSortable) return new Date(b).getTime() - new Date(a).getTime();
+                                if (aSortable) return -1;
+                                if (bSortable) return 1;
+                                return a.localeCompare(b);
+                            });
+
+                            dataHtml += `<div class="gyfw-date-list">`;
+                            sortedDateKeys.forEach((dateKey) => {
+                                const dateLabel = dateKey.startsWith('__undated_') ? "Date not available" : formatDisplayDate(dateKey);
+                                const groupedRecords = groupedByDate.get(dateKey) || [];
+                                dataHtml += `<details class="gyfw-date-item">`;
+                                dataHtml += `  <summary><strong>${dateLabel}</strong></summary>`;
+
+                                groupedRecords.forEach((record, recordIndex) => {
+                                    const recordEntries = Object.entries(record).filter(([key, value]) => {
+                                        if (key === 'date_recorded') return false;
+                                        if (key === 'url' && !value) return false;
+                                        return hasDisplayValue(value);
+                                    });
+
+                                    if (groupedRecords.length > 1) {
+                                        dataHtml += `<p class="gyfw-record-label"><strong>Record ${recordIndex + 1}</strong></p>`;
+                                    }
+
+                                    dataHtml += `<ul>`;
+                                    if (!recordEntries.length) {
+                                        dataHtml += `<li><em>No measurements available.</em></li>`;
+                                    } else {
+                                        recordEntries.forEach(([key, value]) => {
+                                            dataHtml += `<li><strong>${key.replace(/_/g, ' ')}:</strong> ${value !== null && value !== undefined ? value : 'N/A'}</li>`;
+                                        });
+                                    }
+                                    dataHtml += `</ul>`;
+                                });
+
+                                dataHtml += `</details>`;
+                            });
+                            dataHtml += `</div>`;
+                        } else {
+                            if (datasetInfo.id === DATASETS.secchi.id) dataHtml += `<h4>Measurements:</h4>`;
+                            if (datasetInfo.id === DATASETS.microplastics.id) dataHtml += `<h4>Measurements:</h4>`;
+                            if (datasetInfo.id === DATASETS.stream.id) dataHtml += `<h4>Detailed Measurements:</h4>`;
+
+                            clickedFeatureProperties.data_points.forEach((dataPoint, index) => {
+                                if (typeof dataPoint !== 'object' || dataPoint === null) return;
                                 const detailDate = dataPoint.date_recorded ? formatDisplayDate(dataPoint.date_recorded) : `Data Set ${index + 1}`;
 
                                 if (datasetInfo.id === DATASETS.secchi.id) {
                                     for (const key in dataPoint) {
-                                        if (key !== 'url' && key !== 'date_recorded') { // Show the first non-url/date key as the measurement
+                                        if (key !== 'url' && key !== 'date_recorded') {
                                             dataHtml += `<p><strong>Date:</strong> ${detailDate}<br><strong>${key.replace(/_/g, ' ')}:</strong> ${dataPoint[key] !== null && dataPoint[key] !== undefined ? dataPoint[key] : 'N/A'}</p>`;
                                             break;
                                         }
                                     }
                                 } else if (datasetInfo.id === DATASETS.microplastics.id) {
-                                    const microplasticsKey = "microplastics per 60 litre"; // Ensure this key matches your GeoJSON
+                                    const microplasticsKey = "microplastics per 60 litre";
                                     const microplasticsValue = dataPoint[microplasticsKey];
                                     dataHtml += `<div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #eee;">`;
                                     dataHtml += `  <p style="margin-top:0; margin-bottom: 4px;"><strong>Date:</strong> ${detailDate}</p>`;
                                     dataHtml += `  <p style="margin-top:0; margin-bottom: 4px;"><strong>${microplasticsKey.replace(/_/g, ' ')}:</strong> ${microplasticsValue !== null && microplasticsValue !== undefined ? microplasticsValue : 'N/A'}</p>`;
                                     dataHtml += `</div>`;
-                                } else if (datasetInfo.id === DATASETS.stream.id) {
+                                } else {
                                     dataHtml += `<details ${index === 0 ? 'open' : ''}>`;
                                     dataHtml += `  <summary><strong>${detailDate}</strong></summary><ul>`;
                                     for (const [key, value] of Object.entries(dataPoint)) {
@@ -959,13 +1277,13 @@
                                     }
                                     dataHtml += `  </ul></details>`;
                                 }
-                            }
-                        });
+                            });
+                        }
                     } else if (datasetInfo && clickedFeatureProperties.data_points && clickedFeatureProperties.data_points.length === 0) {
-                        // Handle cases where data_points array exists but is empty
                         if (datasetInfo.id === DATASETS.secchi.id) dataHtml += `<p>No Secchi measurements available for this point.</p>`;
                         if (datasetInfo.id === DATASETS.microplastics.id) dataHtml += `<p>No microplastics measurements available for this point.</p>`;
                         if (datasetInfo.id === DATASETS.stream.id) dataHtml += "<p>No detailed measurements available.</p>";
+                        if (datasetInfo.id === DATASETS.gyfw.id) dataHtml += "<p>No GYFW assessments available for this point.</p>";
                     }
                 } // End of non-Litter dataset specific handling
             } // End of if(datasetInfo)
@@ -992,7 +1310,8 @@
                     <li><strong>Secchi Depth:</strong> Measures water clarity.</li>
                     <li><strong>Stream Testing:</strong> Shows results from water quality tests in streams flowing into the lake.</li>
                     <li><strong>Litter Intelligence:</strong> Indicates locations and information about collected litter, categorized by type (Beach, Freshwater, Stormwater).</li>
-                    <li><strong>Microplastics:</strong> Shows the amount of microplastic pieces are found in various locations. 
+                    <li><strong>Microplastics:</strong> Shows the amount of microplastic pieces found in various locations.</li>
+                    <li><strong>Get Your Feet Wet (GYFW):</strong> Shows stream health assessment records collected during field visits.</li>
                 </ul>
                 <p>Click on a point to see detailed information.</p>
             `;
