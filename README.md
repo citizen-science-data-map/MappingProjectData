@@ -71,7 +71,7 @@ Detailed steps:
 
 Saved settings file:
 
-- `C:\wai_project\github_sync_config.json`
+- example:`C:\wai_project\github_sync_config.json`
 
 ## Staff workflow
 
