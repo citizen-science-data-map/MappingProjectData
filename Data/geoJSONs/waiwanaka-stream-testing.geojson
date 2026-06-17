@@ -114,7 +114,7 @@
       "properties": {
         "id": "stream-testing-point-4",
         "site_name": "Stoney Creek",
-        "count": 4,
+        "count": 5,
         "urls": [],
         "data_points": [
           {
@@ -152,6 +152,15 @@
             "pH ": 7.9,
             "Electrical Conductivity (EC) (microS/m)": 130,
             "Nitrate-N + Nitrite-N (g/m3)": 0.22
+          },
+          {
+            "url": "",
+            "date_recorded": "2026-01-01T00:00:00",
+            "Escherichia coli (MPN / 100mL)": 900,
+            "Turbidity (NTU)": 800.0,
+            "pH ": 9.0,
+            "Electrical Conductivity (EC) (microS/m)": 500,
+            "Nitrate-N + Nitrite-N (g/m3)": 10.0
           }
         ],
         "date_recorded": "2025-02-17T12:36:00"
